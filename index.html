@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huis huren in Moraira | Villa Las Palmeras — Costa Blanca</title>
+  <meta name="description" content="Huis huren in Moraira? Villa Las Palmeras is een vrijstaande villa voor 8 gasten met verwarmd zoutwaterzwembad, zomerkeuken en 4 slaapkamers, op loopafstand van zee aan de Costa Blanca.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            zand:   '#EFE8DC',
+            linnen: '#F7F3EB',
+            inkt:   '#2B2620',
+            zee:    '#205E6E',
+            zeediep:'#17454F',
+            palm:   '#5A6B4D',
+            zon:    '#C9A25B',
+          },
+          fontFamily: {
+            display: ['Marcellus', 'Georgia', 'serif'],
+            body: ['Figtree', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    body { @apply bg-zand text-inkt font-body antialiased; }
+
+    /* Avondlucht boven zee — hero-achtergrond tot de echte foto er is (fase 3) */
+    .hero-lucht {
+      background:
+        radial-gradient(ellipse 120% 65% at 50% 108%, rgba(201,162,91,.55) 0%, rgba(201,162,91,0) 55%),
+        radial-gradient(ellipse 90% 70% at 78% 90%, rgba(233,196,138,.4) 0%, rgba(233,196,138,0) 60%),
+        radial-gradient(ellipse 140% 100% at 50% 115%, #2e6d7c 0%, #205E6E 34%, #1a4a57 58%, #14323f 100%);
+    }
+    .grain { position: relative; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .schaduw-zacht { box-shadow: 0 1px 2px rgba(43,38,32,.06), 0 6px 18px rgba(43,38,32,.08); }
+    .schaduw-diep  { box-shadow: 0 2px 4px rgba(23,69,79,.12), 0 14px 40px rgba(23,69,79,.18); }
+
+    .knop-primair {
+      @apply inline-block bg-zee text-linnen px-7 py-3.5 rounded-full font-medium tracking-wide;
+      box-shadow: 0 2px 6px rgba(23,69,79,.25), 0 10px 24px rgba(23,69,79,.22);
+      transition: transform .25s cubic-bezier(.34,1.56,.64,1), background-color .2s ease;
+    }
+    .knop-primair:hover { @apply bg-zeediep; transform: translateY(-2px); }
+    .knop-primair:active { transform: translateY(0); }
+    .knop-primair:focus-visible { outline: 3px solid #C9A25B; outline-offset: 3px; }
+
+    .knop-secundair {
+      @apply inline-block border border-linnen/60 text-linnen px-7 py-3.5 rounded-full font-medium tracking-wide;
+      transition: transform .25s cubic-bezier(.34,1.56,.64,1), background-color .2s ease, border-color .2s ease;
+    }
+    .knop-secundair:hover { @apply bg-linnen/10 border-linnen; transform: translateY(-2px); }
+    .knop-secundair:active { transform: translateY(0); }
+    .knop-secundair:focus-visible { outline: 3px solid #C9A25B; outline-offset: 3px; }
+
+    .navlink { @apply text-linnen/85 font-medium; transition: color .2s ease; }
+    .navlink:hover { @apply text-linnen; }
+    .navlink:focus-visible { outline: 2px solid #C9A25B; outline-offset: 4px; border-radius: 2px; }
+
+    .voetlink { @apply text-linnen/70; transition: color .2s ease; }
+    .voetlink:hover { @apply text-linnen; }
+    .voetlink:focus-visible { outline: 2px solid #C9A25B; outline-offset: 3px; border-radius: 2px; }
+
+    .tekstlink { @apply text-zee font-medium underline decoration-zee/30 underline-offset-4; transition: color .2s ease; }
+    .tekstlink:hover { @apply text-zeediep decoration-zeediep/50; }
+    .tekstlink:focus-visible { outline: 2px solid #205E6E; outline-offset: 3px; border-radius: 2px; }
+
+    .foto-omlijsting { @apply relative overflow-hidden rounded-2xl; }
+    .foto-omlijsting::before {
+      content: ''; position: absolute; inset: 0; z-index: 10; pointer-events: none;
+      background: linear-gradient(to top, rgba(23,69,79,.28), rgba(23,69,79,0) 45%);
+    }
+    .foto-omlijsting img { @apply w-full h-full object-cover; }
+
+    /* Tijdelijke fotovlakken tot de echte foto's er zijn (fase 3) */
+    .foto-plek {
+      @apply w-full h-full flex items-end p-4;
+      background:
+        radial-gradient(ellipse 90% 70% at 30% 20%, rgba(247,243,235,.7) 0%, rgba(247,243,235,0) 60%),
+        linear-gradient(155deg, #e6dccb 0%, #d9cdb7 55%, #cfc1a8 100%);
+    }
+    .foto-plek span { @apply text-sm font-medium text-zeediep/70; }
+
+    .scorebalk { @apply h-1.5 rounded-full bg-inkt/10 overflow-hidden; }
+    .scorebalk > span { @apply block h-full rounded-full bg-zee; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <header class="hero-lucht grain relative min-h-[92vh] flex flex-col">
+    <nav class="relative z-20 flex items-center justify-between px-6 sm:px-10 lg:px-16 py-6">
+      <a href="/" class="navlink font-display text-xl sm:text-2xl tracking-wide text-linnen">Huren in Moraira</a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="het-huis.html" class="navlink">Het huis</a>
+        <a href="omgeving.html" class="navlink">Omgeving</a>
+        <a href="recensies.html" class="navlink">Recensies</a>
+        <a href="blog/index.html" class="navlink">Blog</a>
+        <a href="boeken.html" class="knop-secundair !px-5 !py-2">Boek je verblijf</a>
+      </div>
+      <a href="boeken.html" class="md:hidden knop-secundair !px-4 !py-2 text-sm">Boeken</a>
+    </nav>
+
+    <div class="relative z-20 flex-1 flex items-end">
+      <div class="px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20 lg:pb-24 max-w-4xl">
+        <p class="text-zon font-medium mb-4 text-sm sm:text-base">Villa Las Palmeras, Costa Blanca</p>
+        <h1 class="font-display text-linnen text-5xl sm:text-6xl lg:text-7xl leading-[1.05] [letter-spacing:-0.02em] mb-6">
+          Huis huren in Moraira
+        </h1>
+        <p class="text-linnen/85 text-lg sm:text-xl leading-relaxed max-w-xl mb-9">
+          Een vrijstaande villa voor 8 gasten met verwarmd zoutwaterzwembad, zomerkeuken en een eigen torenkamer — op een van de mooiste plekken van de Spaanse kust.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="boeken.html" class="knop-primair">Bekijk beschikbaarheid</a>
+          <a href="het-huis.html" class="knop-secundair">Ontdek het huis</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- horizonlijn -->
+    <div class="relative z-10 h-px bg-zon/40 mx-6 sm:mx-10 lg:mx-16"></div>
+    <div class="relative z-20 px-6 sm:px-10 lg:px-16 py-5 flex flex-wrap gap-x-10 gap-y-2 text-linnen/75 text-sm">
+      <span>4 slaapkamers</span>
+      <span>2 badkamers</span>
+      <span>8 gasten</span>
+      <span>Zwembad het hele jaar verwarmd</span>
+      <span>5 min. naar zee</span>
+    </div>
+  </header>
+
+  <!-- ═══════════ INTRO ═══════════ -->
+  <section class="px-6 sm:px-10 lg:px-16 py-20 sm:py-28">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5">
+        <h2 class="font-display text-4xl sm:text-5xl leading-tight [letter-spacing:-0.02em]">Het witte dorp aan de Middellandse Zee</h2>
+      </div>
+      <div class="lg:col-span-7 space-y-5 text-lg leading-[1.7] text-inkt/80">
+        <p>
+          Moraira is een van de laatste échte kustdorpen van de Costa Blanca: geen hoogbouw, wel een haven vol visserbootjes, kiezelwitte straatjes en stranden met helder water. Villa Las Palmeras ligt midden in dit dorpse gevoel — je loopt naar de bakker, het strand en de restaurants.
+        </p>
+        <p>
+          De villa is er klaar voor in elk seizoen: het zoutwaterzwembad is het hele jaar verwarmd, de zomerkeuken met barbecue maakt lange avonden buiten vanzelfsprekend, en de torenkamer is de favoriete slaapplek van ieder kind (en menig volwassene).
+        </p>
+        <p><a href="het-huis.html" class="tekstlink">Bekijk alle kamers en voorzieningen</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOTOGALERIJ ═══════════ -->
+  <section class="px-6 sm:px-10 lg:px-16 pb-20 sm:pb-28" aria-label="Foto's van de villa">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-3 sm:gap-4 md:h-[520px]">
+        <div class="foto-omlijsting schaduw-zacht col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto">
+          <div class="foto-plek" role="img" aria-label="Villa Las Palmeras met verwarmd zoutwaterzwembad"><span>Villa &amp; zwembad</span></div>
+        </div>
+        <div class="foto-omlijsting schaduw-zacht aspect-square md:aspect-auto">
+          <div class="foto-plek" role="img" aria-label="De torenkamer van de villa"><span>Torenkamer</span></div>
+        </div>
+        <div class="foto-omlijsting schaduw-zacht aspect-square md:aspect-auto">
+          <div class="foto-plek" role="img" aria-label="Zomerkeuken met barbecue"><span>Zomerkeuken</span></div>
+        </div>
+        <div class="foto-omlijsting schaduw-zacht aspect-square md:aspect-auto">
+          <div class="foto-plek" role="img" aria-label="Patio met meerdere zithoeken"><span>Patio</span></div>
+        </div>
+        <div class="foto-omlijsting schaduw-zacht aspect-square md:aspect-auto">
+          <div class="foto-plek" role="img" aria-label="Slaapkamer met kingsize bed"><span>Slaapkamer</span></div>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-inkt/50">Nieuwe foto's volgen — dit zijn tijdelijke vlakken.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ VOORZIENINGEN ═══════════ -->
+  <section class="bg-linnen border-y border-inkt/10 px-6 sm:px-10 lg:px-16 py-20 sm:py-24">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-display text-4xl sm:text-5xl [letter-spacing:-0.02em] mb-12">Alles is er al</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 text-lg leading-[1.7]">
+        <div>
+          <h3 class="font-semibold mb-1.5">Verwarmd zoutwaterzwembad</h3>
+          <p class="text-inkt/70">Het hele jaar op temperatuur, dag en nacht te gebruiken. Ook in maart of november duik je erin.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1.5">Zomerkeuken en barbecue</h3>
+          <p class="text-inkt/70">Koken en eten doe je buiten, op de patio met meerdere zithoeken in zon en schaduw.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1.5">Vier slaapkamers, vijf bedden</h3>
+          <p class="text-inkt/70">Twee kingsize bedden, een tweepersoonsbed en twee losse bedden — ruimte voor 8 gasten.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1.5">De torenkamer</h3>
+          <p class="text-inkt/70">Een eigen kamer in de toren, bereikbaar via een buitentrap. Wakker worden met uitzicht.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1.5">Moderne keuken en wifi</h3>
+          <p class="text-inkt/70">Volledig uitgeruste keuken binnen, snelle wifi door het hele huis — thuiswerken kan ook.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1.5">Gratis parkeren op eigen terrein</h3>
+          <p class="text-inkt/70">De auto staat op eigen grond; alles in het dorp ligt op loopafstand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ RECENSIES ═══════════ -->
+  <section class="px-6 sm:px-10 lg:px-16 py-20 sm:py-28">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5">
+        <h2 class="font-display text-4xl sm:text-5xl [letter-spacing:-0.02em] mb-6">Gasten geven het huis een 4,7</h2>
+        <p class="text-lg leading-[1.7] text-inkt/80 mb-6">
+          Van de beoordelingen op Airbnb is 86% vijf sterren. De schoonmaak scoort een perfecte 5,0 en de villa wordt verhuurd door een Superhost met negen jaar ervaring.
+        </p>
+        <p><a href="recensies.html" class="tekstlink">Lees alle recensies</a></p>
+      </div>
+      <div class="lg:col-span-7">
+        <div class="bg-linnen rounded-3xl schaduw-diep p-8 sm:p-10 grain">
+          <div class="flex items-baseline gap-4 mb-8">
+            <span class="font-display text-6xl sm:text-7xl text-zee">4,71</span>
+            <div>
+              <div class="text-lg" aria-label="4,7 van 5 sterren"><span class="text-zon">★★★★</span><span class="text-inkt/20">★</span></div>
+              <p class="text-sm text-inkt/60">beoordeling op Airbnb</p>
+            </div>
+          </div>
+          <dl class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1.5"><dt>Schoonmaak</dt><dd class="font-semibold">5,0</dd></div>
+              <div class="scorebalk"><span style="width:100%"></span></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1.5"><dt>Locatie</dt><dd class="font-semibold">4,9</dd></div>
+              <div class="scorebalk"><span style="width:98%"></span></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1.5"><dt>Communicatie</dt><dd class="font-semibold">4,9</dd></div>
+              <div class="scorebalk"><span style="width:98%"></span></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1.5"><dt>Inchecken</dt><dd class="font-semibold">5,0</dd></div>
+              <div class="scorebalk"><span style="width:100%"></span></div>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ OMGEVING ═══════════ -->
+  <section class="bg-zeediep grain text-linnen px-6 sm:px-10 lg:px-16 py-20 sm:py-28">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl mb-14">
+        <h2 class="font-display text-4xl sm:text-5xl [letter-spacing:-0.02em] mb-5">Wat te doen in Moraira</h2>
+        <p class="text-linnen/80 text-lg leading-[1.7]">
+          Alles ligt dichtbij: het zandstrand van El Portet, de haven met vismarkt, wijngaarden in het achterland en de boulevards van Calpe en Jávea op een kwartier rijden.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-x-10 gap-y-8 text-linnen/85">
+        <div class="border-t border-zon/40 pt-5">
+          <h3 class="font-display text-2xl mb-2 text-linnen">Playa El Portet</h3>
+          <p class="leading-[1.7] text-base">Een beschutte baai met ondiep, helder water — het mooiste strand van de omgeving.</p>
+        </div>
+        <div class="border-t border-zon/40 pt-5">
+          <h3 class="font-display text-2xl mb-2 text-linnen">Eten in het dorp</h3>
+          <p class="leading-[1.7] text-base">Van tapas aan de haven tot sterrenniveau: Moraira heeft een opvallend goede keuken.</p>
+        </div>
+        <div class="border-t border-zon/40 pt-5">
+          <h3 class="font-display text-2xl mb-2 text-linnen">Markt en wijnstreek</h3>
+          <p class="leading-[1.7] text-base">Vrijdagmarkt in het dorp, moscatel-wijngaarden en bergdorpjes op korte afstand.</p>
+        </div>
+      </div>
+      <p class="mt-12"><a href="omgeving.html" class="tekstlink !text-zon !decoration-zon/40">Lees meer over de omgeving</a></p>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA ═══════════ -->
+  <section class="px-6 sm:px-10 lg:px-16 py-24 sm:py-32 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="font-display text-4xl sm:text-5xl [letter-spacing:-0.02em] mb-5">Plan je verblijf in Moraira</h2>
+      <p class="text-lg leading-[1.7] text-inkt/80 mb-9">
+        Bekijk de beschikbaarheid van Villa Las Palmeras en boek rechtstreeks. Vragen over het huis of de omgeving? We denken graag mee.
+      </p>
+      <a href="boeken.html" class="knop-primair">Bekijk beschikbaarheid</a>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="bg-inkt text-linnen/80 px-6 sm:px-10 lg:px-16 py-14">
+    <div class="max-w-6xl mx-auto grid sm:grid-cols-3 gap-10 text-sm">
+      <div>
+        <p class="font-display text-xl text-linnen mb-3">Huren in Moraira</p>
+        <p class="leading-[1.7]">Villa Las Palmeras, Moraira<br>Costa Blanca, Spanje</p>
+      </div>
+      <div>
+        <p class="font-semibold text-linnen mb-3">Ontdek</p>
+        <ul class="space-y-2">
+          <li><a href="het-huis.html" class="voetlink">Het huis</a></li>
+          <li><a href="omgeving.html" class="voetlink">Omgeving</a></li>
+          <li><a href="recensies.html" class="voetlink">Recensies</a></li>
+          <li><a href="blog/index.html" class="voetlink">Blog</a></li>
+          <li><a href="boeken.html" class="voetlink">Boeken</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-linnen mb-3">Officieel geregistreerd</p>
+        <p class="leading-[1.7]">Toeristisch registratienummer<br>VT-482776-A (Comunidad Valenciana)</p>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-linnen/15 text-xs text-linnen/50">
+      © 2026 Huren in Moraira
+    </div>
+  </footer>
+
+</body>
+</html>
