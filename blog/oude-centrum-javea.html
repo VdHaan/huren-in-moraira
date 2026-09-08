@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Het oude centrum van Xàbia | Blog Huren in Moraira</title>
+  <meta name="description" content="Twee kilometer van het strand ligt het historische hart van Jávea: een vestingkerk, gevels van tosca-steen en een overdekte markt.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme:      '#F2E9D8',
+            ivoor:      '#FBF6EA',
+            inktbruin:  '#4A3624',
+            koffie:     '#38291A',
+            goud:       '#9C7A46',
+            gouddonker: '#6E4F29',
+            salie:      '#8B9A73',
+          },
+          fontFamily: {
+            display: ['Italiana', 'serif'],
+            body: ['Figtree', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    body { @apply bg-creme text-inktbruin font-body antialiased overflow-x-hidden; }
+    .kicker { @apply font-body font-semibold text-goud text-xs sm:text-sm tracking-[0.28em] uppercase; }
+    .schaduw-zacht { box-shadow: 0 1px 2px rgba(74,54,36,.06), 0 8px 24px rgba(74,54,36,.10); }
+    .schaduw-diep  { box-shadow: 0 2px 4px rgba(74,54,36,.08), 0 18px 48px rgba(74,54,36,.16); }
+    .knop-primair {
+      @apply inline-block bg-gouddonker text-ivoor px-8 py-3.5 rounded-full font-semibold tracking-wide;
+      box-shadow: 0 2px 6px rgba(110,79,41,.30), 0 10px 26px rgba(110,79,41,.22);
+      transition: transform .3s cubic-bezier(.34,1.8,.5,1), background-color .2s ease;
+    }
+    .knop-primair:hover { @apply bg-inktbruin; transform: translateY(-3px) rotate(-1deg) scale(1.02); }
+    .knop-primair:active { transform: translateY(0) scale(.99); }
+    .knop-primair:focus-visible { outline: 3px solid #9C7A46; outline-offset: 3px; }
+    .navlink { @apply text-inktbruin/70 font-medium; transition: color .2s ease; }
+    .navlink:hover { @apply text-goud; }
+    .navlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 4px; border-radius: 4px; }
+    .navlink[aria-current="page"] { @apply text-inktbruin; }
+    .voetlink { @apply text-ivoor/70; transition: color .2s ease; }
+    .voetlink:hover { @apply text-ivoor; }
+    .voetlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 3px; border-radius: 4px; }
+    .tekstlink { @apply text-gouddonker font-semibold underline decoration-2 decoration-goud/50 underline-offset-4; transition: color .2s ease; }
+    .tekstlink:hover { @apply text-inktbruin decoration-goud; }
+    .tekstlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 3px; border-radius: 4px; }
+    .feitpil {
+      @apply inline-flex items-center gap-2 bg-ivoor border border-goud/40 rounded-full px-4 py-2 text-sm font-medium text-inktbruin/80;
+      box-shadow: 0 2px 8px rgba(74,54,36,.06);
+    }
+    .feitpil::before { content: ''; @apply w-1.5 h-1.5 rotate-45 bg-goud shrink-0; }
+    .sectiescheiding { @apply relative max-w-5xl mx-auto h-px bg-goud/30; }
+    .sectiescheiding::after {
+      content: ''; @apply absolute left-1/2 top-1/2 w-2.5 h-2.5 bg-creme border border-goud/60;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .foto-plek {
+      @apply w-full h-full flex items-center justify-center;
+      background:
+        radial-gradient(ellipse 70% 55% at 70% 20%, rgba(156,122,70,.18) 0%, rgba(156,122,70,0) 60%),
+        linear-gradient(165deg, #EFE3CC 0%, #E9DCC2 55%, #E2D2B2 100%);
+    }
+    .foto-plek span { @apply text-sm font-semibold text-gouddonker/80 bg-ivoor/80 rounded-full px-3 py-1; }
+    .artikel h2 { @apply font-display text-3xl sm:text-4xl tracking-wide mt-12 mb-4; }
+    .artikel p { @apply text-lg leading-[1.75] text-inktbruin/75 mb-5; }
+    .blogkaart {
+      @apply block bg-ivoor border border-goud/25 rounded-2xl p-6 schaduw-zacht;
+      transition: transform .3s cubic-bezier(.34,1.8,.5,1), border-color .2s ease;
+    }
+    .blogkaart:hover { transform: translateY(-4px); @apply border-goud/60; }
+    .blogkaart:active { transform: translateY(-1px); }
+    .blogkaart:focus-visible { outline: 3px solid #9C7A46; outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="sticky top-0 z-40 bg-creme/90 backdrop-blur-md border-b border-goud/20">
+    <div class="flex items-center justify-between px-6 sm:px-10 lg:px-16 py-4">
+      <a href="../index.html" class="navlink font-display text-xl sm:text-2xl tracking-wide !text-inktbruin">Huren in Moraira</a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="../het-huis.html" class="navlink">Het huis</a>
+        <a href="../omgeving.html" class="navlink">Omgeving</a>
+        <a href="../recensies.html" class="navlink">Recensies</a>
+        <a href="index.html" class="navlink" aria-current="page">Blog</a>
+        <a href="../boeken.html" class="knop-primair !px-5 !py-2.5 text-sm">Boek je verblijf</a>
+      </div>
+      <a href="../boeken.html" class="md:hidden knop-primair !px-4 !py-2 text-sm">Boeken</a>
+    </div>
+  </nav>
+
+  <article class="artikel">
+    <header class="relative overflow-hidden px-6 sm:px-10 lg:px-16 pt-14 sm:pt-20 pb-10">
+      <div class="max-w-3xl mx-auto">
+        <p class="kicker mb-5"><a href="index.html" class="hover:text-gouddonker" style="letter-spacing:inherit">Blog</a> · Wat te doen in Jávea</p>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-wide mb-6">Het oude centrum van Xàbia</h1>
+        <p class="text-sm text-inktbruin/55 mb-10">8 september 2026 · Leestijd 2 minuten</p>
+        <div class="relative">
+          <div class="absolute inset-0 translate-x-2.5 translate-y-2.5 rounded-3xl border border-goud/50 pointer-events-none" aria-hidden="true"></div>
+          <div class="relative overflow-hidden rounded-3xl schaduw-diep h-56 sm:h-72">
+            <div class="foto-plek" role="img" aria-label="Smal straatje met tosca-stenen gevels in het oude centrum van Xàbia"><span>Foto volgt</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="px-6 sm:px-10 lg:px-16 pb-14">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-xl leading-[1.75] text-inktbruin/80 mb-6">De meeste badgasten blijven aan de kust — en missen daardoor het echte Xàbia. Twee kilometer landinwaarts ligt het oude centrum: een kluwen witte straatjes rond een kerk die eerder een fort lijkt, gebouwd in de goudkleurige tosca-steen die hier uit de kust werd gehakt.</p>
+        <h2>Wat je er ziet</h2>
+        <p>De gotische kerk van San Bartolomé is het middelpunt: metersdikke muren, schietgaten, een kerk waar het dorp zich vroeger letterlijk in verschanste bij piratenaanvallen. Eromheen vind je smalle straten met smeedijzeren balkons, tralievensters en portalen van tosca — elk straatje is een foto.</p>
+        <h2>Markt en terrassen</h2>
+        <p>Loop zeker de overdekte gemeentemarkt binnen voor fruit, vis en lokale kaas, en strijk daarna neer op een van de pleintjes. Het oude centrum is op zijn best aan het eind van de middag, als de zon laag staat en de tosca-gevels goud kleuren — heel toepasselijk voor wie van Villa Las Palmeras komt.</p>
+
+        <aside class="mt-12 bg-ivoor border border-goud/25 rounded-2xl p-6 sm:p-8 schaduw-zacht" aria-label="Praktische informatie">
+          <h2 class="!mt-0 !text-2xl mb-4">Praktisch</h2>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-inktbruin/75 leading-[1.6]"><span class="mt-2 w-1.5 h-1.5 rotate-45 bg-goud shrink-0" aria-hidden="true"></span>Vanaf de villa: ±20 minuten rijden</li>
+            <li class="flex items-start gap-3 text-inktbruin/75 leading-[1.6]"><span class="mt-2 w-1.5 h-1.5 rotate-45 bg-goud shrink-0" aria-hidden="true"></span>Mooiste licht: eind van de middag</li>
+            <li class="flex items-start gap-3 text-inktbruin/75 leading-[1.6]"><span class="mt-2 w-1.5 h-1.5 rotate-45 bg-goud shrink-0" aria-hidden="true"></span>Combineer met de haven of de Arenal</li>
+          </ul>
+        </aside>
+
+        <p class="mt-10"><a href="../omgeving.html" class="tekstlink">Bekijk alle tips in de omgeving</a></p>
+      </div>
+    </div>
+  </article>
+
+  <div class="sectiescheiding mb-16" aria-hidden="true"></div>
+
+  <section class="px-6 sm:px-10 lg:px-16 pb-20 sm:pb-28">
+    <div class="max-w-3xl mx-auto bg-ivoor border border-goud/25 rounded-3xl schaduw-diep p-8 sm:p-12 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl tracking-wide mb-4">Logeren in Moraira?</h2>
+      <p class="text-lg leading-[1.7] text-inktbruin/75 mb-8">
+        Villa Las Palmeras is het ideale vertrekpunt: 4 slaapkamers, 8 gasten en een zwembad dat het hele jaar warm is.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="../boeken.html" class="knop-primair">Bekijk beschikbaarheid</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-koffie text-ivoor/80">
+    <div class="px-6 sm:px-10 lg:px-16 pt-16 pb-14">
+      <div class="max-w-6xl mx-auto grid sm:grid-cols-3 gap-10 text-sm">
+        <div>
+          <p class="font-display text-2xl tracking-wide text-ivoor mb-3">Huren in Moraira</p>
+          <p class="leading-[1.7]">Villa Las Palmeras, Moraira<br>Costa Blanca, Spanje</p>
+        </div>
+        <div>
+          <p class="font-semibold text-ivoor mb-3">Ontdek</p>
+          <ul class="space-y-2">
+            <li><a href="../het-huis.html" class="voetlink">Het huis</a></li>
+            <li><a href="../omgeving.html" class="voetlink">Omgeving</a></li>
+            <li><a href="../recensies.html" class="voetlink">Recensies</a></li>
+            <li><a href="index.html" class="voetlink">Blog</a></li>
+            <li><a href="../boeken.html" class="voetlink">Boeken</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-ivoor mb-3">Officieel geregistreerd</p>
+          <p class="leading-[1.7]">Toeristisch registratienummer<br>VT-482776-A (Comunidad Valenciana)</p>
+        </div>
+      </div>
+      <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-ivoor/15 flex items-center justify-between text-xs text-ivoor/50">
+        <span>© 2026 Huren in Moraira</span>
+        <span class="kicker !text-goud/70 !text-[0.65rem]">Villa Las Palmeras</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Het oude centrum van Xàbia",
+    "description": "Twee kilometer van het strand ligt het historische hart van Jávea: een vestingkerk, gevels van tosca-steen en een overdekte markt.",
+    "datePublished": "2026-09-08",
+    "inLanguage": "nl",
+    "author": { "@type": "Organization", "name": "Huren in Moraira" }
+  }
+  </script>
+</body>
+</html>

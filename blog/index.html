@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog: tips voor Moraira en de Costa Blanca | Huren in Moraira</title>
+  <meta name="description" content="Tips van de eigenaren van Villa Las Palmeras: de mooiste stranden, wandelingen en uitjes in Moraira, Jávea en Alicante.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme:      '#F2E9D8',
+            ivoor:      '#FBF6EA',
+            inktbruin:  '#4A3624',
+            koffie:     '#38291A',
+            goud:       '#9C7A46',
+            gouddonker: '#6E4F29',
+            salie:      '#8B9A73',
+          },
+          fontFamily: {
+            display: ['Italiana', 'serif'],
+            body: ['Figtree', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    body { @apply bg-creme text-inktbruin font-body antialiased overflow-x-hidden; }
+    .kicker { @apply font-body font-semibold text-goud text-xs sm:text-sm tracking-[0.28em] uppercase; }
+    .schaduw-zacht { box-shadow: 0 1px 2px rgba(74,54,36,.06), 0 8px 24px rgba(74,54,36,.10); }
+    .schaduw-diep  { box-shadow: 0 2px 4px rgba(74,54,36,.08), 0 18px 48px rgba(74,54,36,.16); }
+    .knop-primair {
+      @apply inline-block bg-gouddonker text-ivoor px-8 py-3.5 rounded-full font-semibold tracking-wide;
+      box-shadow: 0 2px 6px rgba(110,79,41,.30), 0 10px 26px rgba(110,79,41,.22);
+      transition: transform .3s cubic-bezier(.34,1.8,.5,1), background-color .2s ease;
+    }
+    .knop-primair:hover { @apply bg-inktbruin; transform: translateY(-3px) rotate(-1deg) scale(1.02); }
+    .knop-primair:active { transform: translateY(0) scale(.99); }
+    .knop-primair:focus-visible { outline: 3px solid #9C7A46; outline-offset: 3px; }
+    .navlink { @apply text-inktbruin/70 font-medium; transition: color .2s ease; }
+    .navlink:hover { @apply text-goud; }
+    .navlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 4px; border-radius: 4px; }
+    .navlink[aria-current="page"] { @apply text-inktbruin; }
+    .voetlink { @apply text-ivoor/70; transition: color .2s ease; }
+    .voetlink:hover { @apply text-ivoor; }
+    .voetlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 3px; border-radius: 4px; }
+    .tekstlink { @apply text-gouddonker font-semibold underline decoration-2 decoration-goud/50 underline-offset-4; transition: color .2s ease; }
+    .tekstlink:hover { @apply text-inktbruin decoration-goud; }
+    .tekstlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 3px; border-radius: 4px; }
+    .feitpil {
+      @apply inline-flex items-center gap-2 bg-ivoor border border-goud/40 rounded-full px-4 py-2 text-sm font-medium text-inktbruin/80;
+      box-shadow: 0 2px 8px rgba(74,54,36,.06);
+    }
+    .feitpil::before { content: ''; @apply w-1.5 h-1.5 rotate-45 bg-goud shrink-0; }
+    .sectiescheiding { @apply relative max-w-5xl mx-auto h-px bg-goud/30; }
+    .sectiescheiding::after {
+      content: ''; @apply absolute left-1/2 top-1/2 w-2.5 h-2.5 bg-creme border border-goud/60;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .foto-plek {
+      @apply w-full h-full flex items-center justify-center;
+      background:
+        radial-gradient(ellipse 70% 55% at 70% 20%, rgba(156,122,70,.18) 0%, rgba(156,122,70,0) 60%),
+        linear-gradient(165deg, #EFE3CC 0%, #E9DCC2 55%, #E2D2B2 100%);
+    }
+    .foto-plek span { @apply text-sm font-semibold text-gouddonker/80 bg-ivoor/80 rounded-full px-3 py-1; }
+    .artikel h2 { @apply font-display text-3xl sm:text-4xl tracking-wide mt-12 mb-4; }
+    .artikel p { @apply text-lg leading-[1.75] text-inktbruin/75 mb-5; }
+    .blogkaart {
+      @apply block bg-ivoor border border-goud/25 rounded-2xl p-6 schaduw-zacht;
+      transition: transform .3s cubic-bezier(.34,1.8,.5,1), border-color .2s ease;
+    }
+    .blogkaart:hover { transform: translateY(-4px); @apply border-goud/60; }
+    .blogkaart:active { transform: translateY(-1px); }
+    .blogkaart:focus-visible { outline: 3px solid #9C7A46; outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="sticky top-0 z-40 bg-creme/90 backdrop-blur-md border-b border-goud/20">
+    <div class="flex items-center justify-between px-6 sm:px-10 lg:px-16 py-4">
+      <a href="../index.html" class="navlink font-display text-xl sm:text-2xl tracking-wide !text-inktbruin">Huren in Moraira</a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="../het-huis.html" class="navlink">Het huis</a>
+        <a href="../omgeving.html" class="navlink">Omgeving</a>
+        <a href="../recensies.html" class="navlink">Recensies</a>
+        <a href="index.html" class="navlink" aria-current="page">Blog</a>
+        <a href="../boeken.html" class="knop-primair !px-5 !py-2.5 text-sm">Boek je verblijf</a>
+      </div>
+      <a href="../boeken.html" class="md:hidden knop-primair !px-4 !py-2 text-sm">Boeken</a>
+    </div>
+  </nav>
+
+  <header class="px-6 sm:px-10 lg:px-16 pt-16 sm:pt-24 pb-12 sm:pb-16">
+    <div class="max-w-6xl mx-auto">
+      <p class="kicker mb-6">Tips uit de omgeving</p>
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-wide mb-7">Blog</h1>
+      <p class="text-lg sm:text-xl leading-relaxed text-inktbruin/75 max-w-2xl">
+        Wat wij onze eigen gasten aanraden: de mooiste baaien, wandelingen, markten en uitjes rond Villa Las Palmeras — van Moraira zelf tot een stadsdag Alicante.
+      </p>
+    </div>
+  </header>
+
+  <div class="sectiescheiding" aria-hidden="true"></div>
+
+  <main class="px-6 sm:px-10 lg:px-16 py-14 sm:py-20">
+    <div class="max-w-6xl mx-auto space-y-16">
+      <section aria-label="Wat te doen in Moraira">
+        <div class="flex items-baseline gap-4 flex-wrap mb-8">
+          <h2 class="font-display text-3xl sm:text-4xl tracking-wide">Wat te doen in Moraira</h2>
+          <p class="text-inktbruin/55">In en om het dorp</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a href="playa-el-portet.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Playa El Portet</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Playa El Portet is een beschutte halvemaanbaai met ondiep, helder water — hét strand van Moraira.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="kasteel-van-moraira.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Het kasteel van Moraira en de boulevard</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Het achttiende-eeuwse Castillo de Moraira bewaakt het strand van l’Ampolla.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="markt-van-moraira.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">De vrijdagmarkt van Moraira</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Elke vrijdagochtend verandert Moraira in één grote markt: verse producten, olijven, bloemen en Spaans marktleven.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="wandelen-cap-dor.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Wandelen naar de wachttoren van Cap d’Or</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">De wandeling naar de Torre de Cap d’Or is dé korte wandeling van Moraira: een pittige klim met als beloning uitzicht over de hele kust.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="uit-eten-in-moraira.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Uit eten in Moraira</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Moraira heeft voor zo’n klein dorp een opvallend goede keuken: visrestaurants aan de haven, rijstgerechten aan zee en tapas in het centrum.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+        </div>
+      </section>
+
+      <section aria-label="Wat te doen in Jávea">
+        <div class="flex items-baseline gap-4 flex-wrap mb-8">
+          <h2 class="font-display text-3xl sm:text-4xl tracking-wide">Wat te doen in Jávea</h2>
+          <p class="text-inktbruin/55">Twintig minuten rijden</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a href="playa-del-arenal-javea.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Playa del Arenal</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Playa del Arenal is het grote zandstrand van Jávea: ondiep water, een boulevard vol terrassen en alles voor een complete stranddag.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="cala-granadella-javea.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Cala la Granadella</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Cala la Granadella wordt keer op keer verkozen tot een van de mooiste stranden van Spanje.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="cap-de-la-nau-javea.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Cap de la Nau</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Op Cap de la Nau steekt de Costa Blanca het verst de zee in: vuurtoren, hoge kliffen en op heldere dagen zicht op Ibiza.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="oude-centrum-javea.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Het oude centrum van Xàbia</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Twee kilometer van het strand ligt het historische hart van Jávea: een vestingkerk, gevels van tosca-steen en een overdekte markt.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="wandelen-montgo.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Wandelen in natuurpark Montgó</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">De Montgó — de "olifantenberg" tussen Jávea en Dénia — is een natuurpark met wandelroutes voor elk niveau en weids uitzicht over twee baaien.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+        </div>
+      </section>
+
+      <section aria-label="Wat te doen in Alicante">
+        <div class="flex items-baseline gap-4 flex-wrap mb-8">
+          <h2 class="font-display text-3xl sm:text-4xl tracking-wide">Wat te doen in Alicante</h2>
+          <p class="text-inktbruin/55">Een uur rijden</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a href="castillo-santa-barbara-alicante.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Castillo de Santa Bárbara</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Het Castillo de Santa Bárbara torent hoog boven Alicante uit.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="oude-wijk-alicante.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">El Barrio</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Onder het kasteel ligt de oudste wijk van Alicante: gekleurde huisjes, trappenstraatjes vol bloempotten en tapasbars die tot laat doorgaan.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="mercado-central-alicante.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Mercado Central</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">De Mercado Central van Alicante is een monumentale markthal vol vis, jamón en turrón.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="eiland-tabarca.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">Dagje eiland</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Vanaf de haven van Alicante vaar je naar Tabarca, een autovrij eilandje in het oudste zeereservaat van Spanje.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+          <a href="explanada-en-postiguet.html" class="blogkaart">
+            <h3 class="font-display text-2xl tracking-wide mb-2">De Explanada en stadsstrand El Postiguet</h3>
+            <p class="leading-[1.7] text-inktbruin/70 mb-4">Flaneren over de beroemde palmenboulevard van Alicante en afkoelen op het stadsstrand aan de voet van de kasteelberg: het klassieke rondje Alicante.</p>
+            <span class="tekstlink text-sm">Lees het artikel</span>
+          </a>
+        </div>
+      </section>
+      <p><a href="../omgeving.html" class="tekstlink">Bekijk alles op een rij op de omgevingspagina</a></p>
+    </div>
+  </main>
+
+
+  <section class="px-6 sm:px-10 lg:px-16 pb-20 sm:pb-28">
+    <div class="max-w-3xl mx-auto bg-ivoor border border-goud/25 rounded-3xl schaduw-diep p-8 sm:p-12 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl tracking-wide mb-4">Logeren in Moraira?</h2>
+      <p class="text-lg leading-[1.7] text-inktbruin/75 mb-8">
+        Villa Las Palmeras is het ideale vertrekpunt: 4 slaapkamers, 8 gasten en een zwembad dat het hele jaar warm is.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="../boeken.html" class="knop-primair">Bekijk beschikbaarheid</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-koffie text-ivoor/80">
+    <div class="px-6 sm:px-10 lg:px-16 pt-16 pb-14">
+      <div class="max-w-6xl mx-auto grid sm:grid-cols-3 gap-10 text-sm">
+        <div>
+          <p class="font-display text-2xl tracking-wide text-ivoor mb-3">Huren in Moraira</p>
+          <p class="leading-[1.7]">Villa Las Palmeras, Moraira<br>Costa Blanca, Spanje</p>
+        </div>
+        <div>
+          <p class="font-semibold text-ivoor mb-3">Ontdek</p>
+          <ul class="space-y-2">
+            <li><a href="../het-huis.html" class="voetlink">Het huis</a></li>
+            <li><a href="../omgeving.html" class="voetlink">Omgeving</a></li>
+            <li><a href="../recensies.html" class="voetlink">Recensies</a></li>
+            <li><a href="index.html" class="voetlink">Blog</a></li>
+            <li><a href="../boeken.html" class="voetlink">Boeken</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-ivoor mb-3">Officieel geregistreerd</p>
+          <p class="leading-[1.7]">Toeristisch registratienummer<br>VT-482776-A (Comunidad Valenciana)</p>
+        </div>
+      </div>
+      <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-ivoor/15 flex items-center justify-between text-xs text-ivoor/50">
+        <span>© 2026 Huren in Moraira</span>
+        <span class="kicker !text-goud/70 !text-[0.65rem]">Villa Las Palmeras</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
