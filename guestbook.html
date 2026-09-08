@@ -129,6 +129,47 @@
     .navlink { @apply text-inktbruin/70 font-medium; transition: color .2s ease; }
     .navlink:hover { @apply text-goud; }
     .navlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 4px; border-radius: 4px; }
+
+    /* Mobiel menu: gouden hairline-ring die opengaat naar een paneel onder de nav */
+    .menu-knop {
+      @apply w-11 h-11 rounded-full border border-goud/40 bg-ivoor/60 flex flex-col items-center justify-center gap-[5px] shrink-0 cursor-pointer;
+      list-style: none;
+      transition: border-color .2s ease, background-color .2s ease, transform .3s cubic-bezier(.34,1.8,.5,1);
+    }
+    .menu-knop::-webkit-details-marker { display: none; }
+    .menu-knop:hover { @apply border-goud bg-ivoor; }
+    .menu-knop:active { transform: scale(.93); }
+    .menu-knop:focus-visible { outline: 3px solid #9C7A46; outline-offset: 3px; }
+    .menu-streep {
+      @apply block w-[19px] h-px bg-goud;
+      transition: transform .35s cubic-bezier(.34,1.6,.5,1), opacity .2s ease;
+    }
+    .menu[open] .menu-streep:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .menu[open] .menu-streep:nth-child(2) { opacity: 0; transform: scaleX(.2); }
+    .menu[open] .menu-streep:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .menu-paneel {
+      @apply absolute left-0 right-0 top-full max-h-[calc(100vh-5rem)] overflow-y-auto bg-ivoor border-b border-goud/25 px-6 py-1;
+      box-shadow: 0 2px 4px rgba(74,54,36,.08), 0 18px 48px rgba(74,54,36,.16);
+      animation: menu-opent .32s cubic-bezier(.25,1,.35,1);
+    }
+    @keyframes menu-opent { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .menu-link {
+      @apply flex items-center gap-3 py-3.5 font-display text-xl tracking-wide text-inktbruin;
+      transition: color .2s ease;
+    }
+    .menu-link + .menu-link { @apply border-t border-goud/20; }
+    .menu-link::before {
+      content: ''; @apply w-1.5 h-1.5 rotate-45 border border-goud shrink-0;
+      transition: background-color .2s ease;
+    }
+    .menu-link:hover { @apply text-goud; }
+    .menu-link:hover::before { @apply bg-goud; }
+    .menu-link:active { @apply text-gouddonker; }
+    .menu-link:focus-visible { outline: 2px solid #9C7A46; outline-offset: 3px; border-radius: 4px; }
+    .menu-link[aria-current="page"] { @apply text-gouddonker; }
+    .menu-link[aria-current="page"]::before { @apply bg-goud; }
     .navlink[aria-current="page"] { @apply text-gouddonker font-semibold; }
 
     .voetlink { @apply text-ivoor/70; transition: color .2s ease; }
@@ -214,7 +255,7 @@
 
   <!-- ═══════════ NAV ═══════════ -->
   <nav class="sticky top-0 z-40 bg-creme/90 backdrop-blur-md border-b border-goud/20">
-    <div class="flex items-center justify-between px-6 sm:px-10 lg:px-16 py-4">
+    <div class="flex items-center justify-between gap-3 px-6 sm:px-10 lg:px-16 py-4">
       <a href="index.html" class="navlink font-display text-xl sm:text-2xl tracking-wide !text-inktbruin">Huren in Moraira</a>
       <div class="hidden md:flex items-center gap-8 text-sm">
         <a href="het-huis.html" class="navlink">Villa Las Palmeras</a>
@@ -223,9 +264,42 @@
         <a href="blog/index.html" class="navlink">Blog</a>
         <a href="boeken.html" class="knop-primair !px-5 !py-2.5 text-sm">Boek je verblijf</a>
       </div>
-      <a href="boeken.html" class="md:hidden knop-primair !px-4 !py-2 text-sm">Boeken</a>
+      <div class="md:hidden flex items-center gap-2.5">
+        <a href="boeken.html" class="knop-primair !px-4 !py-2 text-sm">Boeken</a>
+        <details class="menu" id="menu">
+          <summary class="menu-knop" aria-label="Menu">
+            <span class="menu-streep"></span>
+            <span class="menu-streep"></span>
+            <span class="menu-streep"></span>
+          </summary>
+          <div class="menu-paneel">
+            <a href="index.html" class="menu-link">Home</a>
+            <a href="het-huis.html" class="menu-link">Villa Las Palmeras</a>
+            <a href="omgeving.html" class="menu-link">Omgeving</a>
+            <a href="guestbook.html" class="menu-link" aria-current="page">Guestbook</a>
+            <a href="blog/index.html" class="menu-link">Blog</a>
+          </div>
+        </details>
+      </div>
     </div>
   </nav>
+
+  <script>
+    // Mobiel menu: dicht bij Escape, bij een klik buiten het menu en zodra het scherm breed genoeg is.
+    (function () {
+      var menu = document.getElementById('menu');
+      if (!menu) return;
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
+      });
+      document.addEventListener('click', function (e) {
+        if (menu.open && !menu.contains(e.target)) menu.open = false;
+      });
+      window.addEventListener('resize', function () {
+        if (menu.open && window.innerWidth >= 768) menu.open = false;
+      });
+    })();
+  </script>
 
   <!-- ═══════════ PAGINAKOP ═══════════ -->
   <header class="grain relative overflow-hidden">
