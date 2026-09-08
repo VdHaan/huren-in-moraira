@@ -141,6 +141,9 @@
     .voorziening-kaart { @apply bg-ivoor border border-goud/25 rounded-2xl p-6 schaduw-zacht; }
     .voorziening-icoon { @apply w-11 h-11 rounded-full border border-goud/40 flex items-center justify-center mb-4 text-goud; }
 
+    /* Palmboompje als ster (zelfde symbool als guestbook.html) — de site beoordeelt in palmen */
+    .palm-icoon { width: 1.15em; height: 1.15em; display: inline-block; vertical-align: -0.18em; }
+
     @keyframes twinkel { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
     .sprankel { animation: twinkel 3.5s ease-in-out infinite; transform-origin: center; }
     .sprankel:nth-of-type(2) { animation-delay: 1.1s; }
@@ -152,6 +155,22 @@
   </style>
 </head>
 <body>
+
+  <!-- Palmboompje voor de beoordelingen (palmen = sterren), hergebruikt via <use> -->
+  <svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="palmster" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M12,21.5 C11.2,17.5 11.3,13.5 12.4,10"/>
+          <path d="M12.4,10 C10.2,7.6 7.6,7 5,7.8"/>
+          <path d="M12.4,10 C10.4,9.6 8.6,10.6 7.4,13.2"/>
+          <path d="M12.4,10 C12,6.8 13,4.4 15.2,3"/>
+          <path d="M12.4,10 C14.6,7.6 17.2,7 19.6,7.9"/>
+          <path d="M12.4,10 C14.4,9.6 16.2,10.8 17.2,13.4"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
 
   <!-- ═══════════ NAV (sticky: boekknop altijd in beeld) ═══════════ -->
   <nav class="sticky top-0 z-40 bg-creme/90 backdrop-blur-md border-b border-goud/20">
@@ -195,7 +214,7 @@
           <a href="het-huis.html" class="knop-secundair">Ontdek het huis</a>
         </div>
         <p class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-inktbruin/70">
-          <span><span class="text-goud">★</span> <strong class="font-semibold text-inktbruin">4,71</strong> van onze gasten</span>
+          <span><svg class="palm-icoon text-goud" aria-hidden="true"><use href="#palmster"/></svg> <strong class="font-semibold text-inktbruin">4,71</strong> van onze gasten</span>
           <span class="text-goud/60" aria-hidden="true">·</span>
           <span>Superhost, 9 jaar ervaring</span>
           <span class="text-goud/60" aria-hidden="true">·</span>
@@ -339,7 +358,13 @@
           <div class="flex items-baseline gap-4 mb-8">
             <span class="font-display text-6xl sm:text-7xl text-goud">4,71</span>
             <div>
-              <div class="text-lg" aria-label="4,7 van 5 sterren"><span class="text-goud">★★★★</span><span class="text-inktbruin/15">★</span></div>
+              <div class="flex items-center gap-1 text-lg" role="img" aria-label="4,7 van 5 sterren">
+                <svg class="palm-icoon text-goud" aria-hidden="true"><use href="#palmster"/></svg>
+                <svg class="palm-icoon text-goud" aria-hidden="true"><use href="#palmster"/></svg>
+                <svg class="palm-icoon text-goud" aria-hidden="true"><use href="#palmster"/></svg>
+                <svg class="palm-icoon text-goud" aria-hidden="true"><use href="#palmster"/></svg>
+                <svg class="palm-icoon text-inktbruin/15" aria-hidden="true"><use href="#palmster"/></svg>
+              </div>
               <p class="text-sm text-inktbruin/60">beoordeling door gasten</p>
             </div>
           </div>
