@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guestbook — wat gasten zeggen | Huis huren in Moraira</title>
-  <meta name="description" content="Lees het guestbook van Villa Las Palmeras in Moraira: echte recensies van gasten, letterlijk overgenomen van Airbnb. Gemiddeld 4,71 — 86% geeft vijf sterren.">
+  <meta name="description" content="Lees het guestbook van Villa Las Palmeras in Moraira: echte verhalen van gasten die er logeerden. Gemiddeld 4,71 — 86% geeft vijf sterren.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -164,6 +164,11 @@
     /* Groot aanhalingsteken boven elke gast — het gastenboek-motief */
     .gastquote { @apply font-display text-8xl leading-[0.6] text-goud/45 select-none; }
 
+    /* Vijf palmboompjes als sterren — Las Palmeras beoordeelt in palmen */
+    .palmrij { @apply flex items-end gap-1.5 text-goud; }
+    .palmrij svg { @apply w-6 h-6 sm:w-7 sm:h-7 shrink-0; }
+    .palmrij svg:nth-child(even) { transform: rotate(-6deg); }
+
     /* Inschuivers: recensiefoto schuift vanaf de zijkant in, de fotostrook van onderen,
        met een kleine vertraging per foto. Alleen mét JS en zonder reduced-motion —
        anders staat alles gewoon zichtbaar op zijn plek. */
@@ -190,6 +195,22 @@
   </style>
 </head>
 <body>
+
+  <!-- Palmboompje voor de beoordelingen (5 palmen = 5 sterren), hergebruikt via <use> -->
+  <svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="palmster" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M12,21.5 C11.2,17.5 11.3,13.5 12.4,10"/>
+          <path d="M12.4,10 C10.2,7.6 7.6,7 5,7.8"/>
+          <path d="M12.4,10 C10.4,9.6 8.6,10.6 7.4,13.2"/>
+          <path d="M12.4,10 C12,6.8 13,4.4 15.2,3"/>
+          <path d="M12.4,10 C14.6,7.6 17.2,7 19.6,7.9"/>
+          <path d="M12.4,10 C14.4,9.6 16.2,10.8 17.2,13.4"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
 
   <!-- ═══════════ NAV ═══════════ -->
   <nav class="sticky top-0 z-40 bg-creme/90 backdrop-blur-md border-b border-goud/20">
@@ -232,7 +253,7 @@
       <p class="kicker mb-6">Villa Las Palmeras · wat gasten zeggen</p>
       <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-wide mb-7">Guestbook</h1>
       <p class="text-lg sm:text-xl leading-relaxed text-inktbruin/75 max-w-2xl mb-8">
-        Wie hier logeerde, vertelt het beter dan wij. Dit zijn de woorden van gasten die je voorgingen — letterlijk overgenomen van onze <a href="https://www.airbnb.nl/rooms/1414348870844252524" class="tekstlink" rel="noopener">Airbnb-pagina</a>, waar je ze ook allemaal kunt nalezen.
+        Wie hier logeerde, vertelt het beter dan wij. Dit zijn de woorden van gasten die je voorgingen, precies zoals ze ze achterlieten.
       </p>
       <div class="flex flex-wrap gap-3">
         <span class="feitpil">4,71 gemiddeld</span>
@@ -255,6 +276,13 @@
         </div>
         <div class="lg:col-span-6 inschuiver schuif-rechts">
           <p class="gastquote mb-6" aria-hidden="true">&ldquo;</p>
+          <div class="palmrij mb-3" aria-hidden="true">
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+          </div>
           <p class="kicker mb-3">Juli 2026 · Vijf sterren</p>
           <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">Carina</h2>
           <div class="space-y-4 text-lg leading-[1.7] text-inktbruin/75">
@@ -291,6 +319,13 @@
         </div>
         <div class="lg:col-span-6 order-2 lg:order-1 inschuiver schuif-links">
           <p class="gastquote mb-6" aria-hidden="true">&ldquo;</p>
+          <div class="palmrij mb-3" aria-hidden="true">
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+          </div>
           <p class="kicker mb-3">Juni 2026 · Vijf sterren</p>
           <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">Faith-Justin</h2>
           <div class="space-y-4 text-lg leading-[1.7] text-inktbruin/75">
@@ -325,6 +360,13 @@
         </div>
         <div class="lg:col-span-6 inschuiver schuif-rechts">
           <p class="gastquote mb-6" aria-hidden="true">&ldquo;</p>
+          <div class="palmrij mb-3" aria-hidden="true">
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+          </div>
           <p class="kicker mb-3">April 2026 · Vijf sterren</p>
           <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">Soë Solange Catherina</h2>
           <div class="space-y-4 text-lg leading-[1.7] text-inktbruin/75">
@@ -359,6 +401,13 @@
         </div>
         <div class="lg:col-span-6 order-2 lg:order-1 inschuiver schuif-links">
           <p class="gastquote mb-6" aria-hidden="true">&ldquo;</p>
+          <div class="palmrij mb-3" aria-hidden="true">
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+          </div>
           <p class="kicker mb-3">Januari 2026 · Vijf sterren</p>
           <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">Bass</h2>
           <div class="space-y-4 text-2xl leading-[1.6] text-inktbruin/75">
@@ -393,6 +442,13 @@
         </div>
         <div class="lg:col-span-6 inschuiver schuif-rechts">
           <p class="gastquote mb-6" aria-hidden="true">&ldquo;</p>
+          <div class="palmrij mb-3" aria-hidden="true">
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+          </div>
           <p class="kicker mb-3">Juli 2025 · Vijf sterren</p>
           <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">Rebecca</h2>
           <div class="space-y-4 text-2xl leading-[1.6] text-inktbruin/75">
@@ -427,6 +483,13 @@
         </div>
         <div class="lg:col-span-6 order-2 lg:order-1 inschuiver schuif-links">
           <p class="gastquote mb-6" aria-hidden="true">&ldquo;</p>
+          <div class="palmrij mb-3" aria-hidden="true">
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+            <svg><use href="#palmster"/></svg>
+          </div>
           <p class="kicker mb-3">Juni 2025 · Vijf sterren</p>
           <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">Jennifer</h2>
           <div class="space-y-4 text-lg leading-[1.7] text-inktbruin/75">
