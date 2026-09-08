@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villa Las Palmeras — alle kamers | Huis huren in Moraira</title>
+  <meta name="description" content="Bekijk Villa Las Palmeras in Moraira kamer voor kamer: woonkamer, keuken, vier slaapkamers met torenkamer, twee badkamers en de tuin met verwarmd zoutwaterzwembad en zomerkeuken.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VacationRental",
+    "name": "Villa Las Palmeras",
+    "description": "Vrijstaande villa voor 8 gasten met verwarmd zoutwaterzwembad, zomerkeuken en 4 slaapkamers in Moraira, Costa Blanca.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Moraira",
+      "addressRegion": "Comunidad Valenciana",
+      "addressCountry": "ES"
+    },
+    "identifier": "VT-482776-A",
+    "numberOfRooms": 4,
+    "numberOfBathroomsTotal": 2,
+    "occupancy": { "@type": "QuantitativeValue", "maxValue": 8 },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.71", "bestRating": "5", "reviewCount": "7" }
+  }
+  </script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme:      '#F2E9D8',
+            ivoor:      '#FBF6EA',
+            inktbruin:  '#4A3624',
+            koffie:     '#38291A',
+            goud:       '#9C7A46',
+            gouddonker: '#6E4F29',
+            salie:      '#8B9A73',
+          },
+          fontFamily: {
+            display: ['Italiana', 'serif'],
+            body: ['Figtree', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    html { scroll-behavior: smooth; }
+    body { @apply bg-creme text-inktbruin font-body antialiased overflow-x-hidden; }
+
+    .kicker { @apply font-body font-semibold text-goud text-xs sm:text-sm tracking-[0.28em] uppercase; }
+
+    .grain { position: relative; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .04; mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .schaduw-zacht { box-shadow: 0 1px 2px rgba(74,54,36,.06), 0 8px 24px rgba(74,54,36,.10); }
+    .schaduw-diep  { box-shadow: 0 2px 4px rgba(74,54,36,.08), 0 18px 48px rgba(74,54,36,.16); }
+
+    .knop-primair {
+      @apply inline-block bg-gouddonker text-ivoor px-8 py-3.5 rounded-full font-semibold tracking-wide;
+      box-shadow: 0 2px 6px rgba(110,79,41,.30), 0 10px 26px rgba(110,79,41,.22);
+      transition: transform .3s cubic-bezier(.34,1.8,.5,1), background-color .2s ease;
+    }
+    .knop-primair:hover { @apply bg-inktbruin; transform: translateY(-3px) rotate(-1deg) scale(1.02); }
+    .knop-primair:active { transform: translateY(0) scale(.99); }
+    .knop-primair:focus-visible { outline: 3px solid #9C7A46; outline-offset: 3px; }
+
+    .knop-secundair {
+      @apply inline-block bg-ivoor/70 border border-goud/50 text-inktbruin px-8 py-3.5 rounded-full font-semibold tracking-wide;
+      transition: transform .3s cubic-bezier(.34,1.8,.5,1), border-color .2s ease, background-color .2s ease;
+    }
+    .knop-secundair:hover { @apply border-goud bg-ivoor; transform: translateY(-3px) rotate(1deg) scale(1.02); }
+    .knop-secundair:active { transform: translateY(0) scale(.99); }
+    .knop-secundair:focus-visible { outline: 3px solid #9C7A46; outline-offset: 3px; }
+
+    .navlink { @apply text-inktbruin/70 font-medium; transition: color .2s ease; }
+    .navlink:hover { @apply text-goud; }
+    .navlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 4px; border-radius: 4px; }
+    .navlink[aria-current="page"] { @apply text-gouddonker font-semibold; }
+
+    .voetlink { @apply text-ivoor/70; transition: color .2s ease; }
+    .voetlink:hover { @apply text-ivoor; }
+    .voetlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 3px; border-radius: 4px; }
+
+    .tekstlink { @apply text-gouddonker font-semibold underline decoration-2 decoration-goud/50 underline-offset-4; transition: color .2s ease; }
+    .tekstlink:hover { @apply text-inktbruin decoration-goud; }
+    .tekstlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 3px; border-radius: 4px; }
+
+    .feitpil {
+      @apply inline-flex items-center gap-2 bg-ivoor border border-goud/40 rounded-full px-4 py-2 text-sm font-medium text-inktbruin/80;
+      box-shadow: 0 2px 8px rgba(74,54,36,.06);
+    }
+    .feitpil::before { content: ''; @apply w-1.5 h-1.5 rotate-45 bg-goud shrink-0; }
+
+    .sectiescheiding { @apply relative max-w-5xl mx-auto h-px bg-goud/30; }
+    .sectiescheiding::after {
+      content: ''; @apply absolute left-1/2 top-1/2 w-2.5 h-2.5 bg-creme border border-goud/60;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .foto-omlijsting {
+      @apply relative overflow-hidden rounded-2xl bg-ivoor;
+    }
+    .foto-omlijsting::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(180deg, rgba(74,54,36,0) 68%, rgba(56,41,26,.18) 100%);
+    }
+    .foto-omlijsting img { @apply w-full h-full object-cover; transition: transform .5s cubic-bezier(.25,1,.35,1); }
+    .foto-omlijsting:hover img { transform: scale(1.04); }
+
+    .boogfoto {
+      @apply relative overflow-hidden;
+      border-radius: 999px 999px 1.5rem 1.5rem;
+    }
+    .boogfoto img { @apply w-full h-full object-cover; }
+
+    /* Kamer-index: Airbnb-achtige chips die naar de secties scrollen */
+    .kamerchip { @apply flex flex-col items-center gap-2 shrink-0 w-24 sm:w-28; }
+    .kamerchip img { @apply w-full aspect-square object-cover rounded-2xl border border-goud/30; transition: transform .3s cubic-bezier(.34,1.8,.5,1); box-shadow: 0 2px 8px rgba(74,54,36,.08); }
+    .kamerchip span { @apply text-sm font-medium text-inktbruin/80 text-center leading-tight; transition: color .2s ease; }
+    .kamerchip:hover img { transform: translateY(-3px) rotate(-1deg); }
+    .kamerchip:hover span { @apply text-gouddonker; }
+    .kamerchip:focus-visible { outline: none; }
+    .kamerchip:focus-visible img { outline: 3px solid #9C7A46; outline-offset: 2px; }
+    .kamerchip:active img { transform: translateY(0); }
+
+    /* Kamersecties krijgen ruimte onder de sticky nav bij ankerscroll */
+    .kamersectie { scroll-margin-top: 92px; }
+
+    .bedkaart { @apply bg-ivoor border border-goud/25 rounded-2xl overflow-hidden schaduw-zacht; }
+    .bedkaart figcaption { @apply p-5; }
+
+    @keyframes twinkel { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+    .sprankel { animation: twinkel 3.5s ease-in-out infinite; transform-origin: center; }
+    .sprankel:nth-of-type(2) { animation-delay: 1.1s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav class="sticky top-0 z-40 bg-creme/90 backdrop-blur-md border-b border-goud/20">
+    <div class="flex items-center justify-between px-6 sm:px-10 lg:px-16 py-4">
+      <a href="index.html" class="navlink font-display text-xl sm:text-2xl tracking-wide !text-inktbruin">Huren in Moraira</a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="het-huis.html" class="navlink" aria-current="page">Villa Las Palmeras</a>
+        <a href="omgeving.html" class="navlink">Omgeving</a>
+        <a href="recensies.html" class="navlink">Recensies</a>
+        <a href="blog/index.html" class="navlink">Blog</a>
+        <a href="boeken.html" class="knop-primair !px-5 !py-2.5 text-sm">Boek je verblijf</a>
+      </div>
+      <a href="boeken.html" class="md:hidden knop-primair !px-4 !py-2 text-sm">Boeken</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════ PAGINAKOP ═══════════ -->
+  <header class="grain relative overflow-hidden">
+    <!-- palmtak linksboven, zelfde knipoog als de homepage -->
+    <svg class="absolute -top-4 -left-6 w-36 sm:w-48 h-auto text-goud/25 -rotate-[10deg] pointer-events-none" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+      <g transform="translate(24,182)">
+        <g transform="rotate(-58)"><path d="M0,0 C-9,-38 -13,-84 0,-140 C13,-84 9,-38 0,0 Z"/><path d="M0,-6 L0,-134"/></g>
+        <g transform="rotate(-35)"><path d="M0,0 C-10,-44 -15,-96 0,-158 C15,-96 10,-44 0,0 Z"/><path d="M0,-6 L0,-152"/></g>
+        <g transform="rotate(-12)"><path d="M0,0 C-11,-48 -16,-104 0,-172 C16,-104 11,-48 0,0 Z"/><path d="M0,-6 L0,-166"/></g>
+        <g transform="rotate(12)"><path d="M0,0 C-10,-44 -15,-96 0,-158 C15,-96 10,-44 0,0 Z"/><path d="M0,-6 L0,-152"/></g>
+        <g transform="rotate(34)"><path d="M0,0 C-8,-34 -12,-74 0,-122 C12,-74 8,-34 0,0 Z"/><path d="M0,-6 L0,-116"/></g>
+      </g>
+    </svg>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pt-14 sm:pt-20 pb-10 sm:pb-14">
+      <p class="kicker mb-6">Het huis · kamer voor kamer</p>
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-wide mb-7">Villa Las Palmeras</h1>
+      <p class="text-lg sm:text-xl leading-relaxed text-inktbruin/75 max-w-2xl mb-8">
+        Loop virtueel door het huis zoals je er straks echt doorheen loopt: van de woonkamer met open haard naar de keuken, langs vier slaapkamers — waarvan één in de toren — tot aan het verwarmde zwembad in de tuin.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <span class="feitpil">4 slaapkamers</span>
+        <span class="feitpil">2 badkamers</span>
+        <span class="feitpil">5 bedden</span>
+        <span class="feitpil">8 gasten</span>
+      </div>
+    </div>
+
+    <!-- kamer-index: chips die naar de kamers scrollen -->
+    <div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pb-12 sm:pb-16">
+      <nav aria-label="Snel naar een kamer" class="flex gap-4 sm:gap-5 overflow-x-auto pb-2 -mb-2">
+        <a href="#woonkamer" class="kamerchip">
+          <img src="brand_assets/foto-villa/woonkamer-1.jpg" alt="" loading="lazy" width="112" height="112">
+          <span>Woonkamer</span>
+        </a>
+        <a href="#keuken" class="kamerchip">
+          <img src="brand_assets/foto-villa/keuken.jpg" alt="" loading="lazy" width="112" height="112">
+          <span>Keuken</span>
+        </a>
+        <a href="#eethoek" class="kamerchip">
+          <img src="brand_assets/foto-villa/eetgedeelte.jpg" alt="" loading="lazy" width="112" height="112">
+          <span>Eethoek</span>
+        </a>
+        <a href="#slaapkamers" class="kamerchip">
+          <img src="brand_assets/foto-villa/slaapkamer-2.jpg" alt="" loading="lazy" width="112" height="112">
+          <span>Slaapkamers</span>
+        </a>
+        <a href="#torenkamer" class="kamerchip">
+          <img src="brand_assets/foto-villa/torenkamer-buitenkant.jpg" alt="" loading="lazy" width="112" height="112">
+          <span>Torenkamer</span>
+        </a>
+        <a href="#badkamers" class="kamerchip">
+          <img src="brand_assets/foto-villa/badkamer-1.jpg" alt="" loading="lazy" width="112" height="112">
+          <span>Badkamers</span>
+        </a>
+        <a href="#buiten" class="kamerchip">
+          <img src="brand_assets/foto-villa/zwembad.jpg" alt="" loading="lazy" width="112" height="112">
+          <span>Buiten</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="sectiescheiding" aria-hidden="true"></div>
+
+  <!-- ═══════════ WOONKAMER ═══════════ -->
+  <section id="woonkamer" class="kamersectie px-6 sm:px-10 lg:px-16 py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7 grid grid-cols-3 gap-4">
+        <div class="foto-omlijsting schaduw-zacht col-span-3 aspect-[16/10]">
+          <img src="brand_assets/foto-villa/woonkamer-1.jpg" alt="Woonkamer met twee grote banken, open haard en tv" loading="lazy">
+        </div>
+        <div class="foto-omlijsting schaduw-zacht col-span-2 aspect-[16/10]">
+          <img src="brand_assets/foto-villa/woonkamer-3.jpg" alt="Zithoek rond de open haard met rieten wanddecoratie" loading="lazy">
+        </div>
+        <div class="foto-omlijsting schaduw-zacht aspect-[4/5]">
+          <img src="brand_assets/foto-villa/woonkamer-2.jpg" alt="Bank bij het raam met veel daglicht in de woonkamer" loading="lazy">
+        </div>
+      </div>
+      <div class="lg:col-span-5">
+        <p class="kicker mb-4">Binnen</p>
+        <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">De woonkamer</h2>
+        <p class="text-lg leading-[1.7] text-inktbruin/75 mb-5">
+          Twee grote banken rond de open haard, een tv voor de filmavond en overal daglicht. De woonkamer loopt open over in de keuken, dus niemand staat er alleen voor.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="feitpil">Open haard</span>
+          <span class="feitpil">Tv</span>
+          <span class="feitpil">Wifi door het hele huis</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ KEUKEN ═══════════ -->
+  <section id="keuken" class="kamersectie relative bg-ivoor/60 border-y border-goud/20 px-6 sm:px-10 lg:px-16 py-16 sm:py-20 overflow-hidden">
+    <!-- lijnillustratie: pannetje op vuur -->
+    <svg class="hidden sm:block absolute top-10 right-10 w-20 h-auto text-goud/40" viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+      <path d="M25,45 L95,45 L91,80 C90,86 85,90 79,90 L41,90 C35,90 30,86 29,80 Z"/>
+      <path d="M95,50 L108,44"/>
+      <path d="M40,32 C38,26 42,22 40,16"/>
+      <path d="M56,32 C54,26 58,22 56,16"/>
+      <path d="M72,32 C70,26 74,22 72,16"/>
+    </svg>
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <p class="kicker mb-4">Binnen</p>
+        <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">De keuken</h2>
+        <p class="text-lg leading-[1.7] text-inktbruin/75 mb-5">
+          Modern en volledig uitgerust, met houten fronten, een patroontegelwand en alles wat je nodig hebt om voor acht mensen te koken. En als het weer het toelaat — meestal dus — verhuist het koken naar de zomerkeuken buiten.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="feitpil">Volledig uitgerust</span>
+          <span class="feitpil">Oven en kookplaat</span>
+          <span class="feitpil">Koffie- en theezetter</span>
+        </div>
+      </div>
+      <div class="lg:col-span-7 order-1 lg:order-2">
+        <div class="foto-omlijsting schaduw-zacht aspect-[16/10]">
+          <img src="brand_assets/foto-villa/keuken.jpg" alt="Moderne keuken met houten fronten en patroontegels" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EETHOEK ═══════════ -->
+  <section id="eethoek" class="kamersectie px-6 sm:px-10 lg:px-16 py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7">
+        <div class="foto-omlijsting schaduw-zacht aspect-[16/10]">
+          <img src="brand_assets/foto-villa/eetgedeelte.jpg" alt="Ronde houten eettafel met stoelen en een grote palm" loading="lazy">
+        </div>
+      </div>
+      <div class="lg:col-span-5">
+        <p class="kicker mb-4">Binnen</p>
+        <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">De eethoek</h2>
+        <p class="text-lg leading-[1.7] text-inktbruin/75 mb-5">
+          Een ronde houten tafel in een licht hoekje van het huis — voor het ontbijt, een potje kaarten of de avonden waarop het buiten tóch te fris wordt. De grote tafel voor lange diners staat buiten op de patio.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="feitpil">Binnen én buiten eten</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sectiescheiding" aria-hidden="true"></div>
+
+  <!-- ═══════════ SLAAPKAMERS (Airbnb-stijl: waar je slaapt) ═══════════ -->
+  <section id="slaapkamers" class="kamersectie relative px-6 sm:px-10 lg:px-16 py-16 sm:py-20 overflow-hidden">
+    <!-- lijnillustratie: bedje met maan -->
+    <svg class="hidden sm:block absolute top-12 right-10 w-24 h-auto text-goud/40" viewBox="0 0 140 100" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+      <path d="M15,85 L15,45 C15,38 21,34 27,34 L113,34 C119,34 125,38 125,45 L125,85"/>
+      <path d="M15,68 L125,68"/>
+      <path d="M25,54 C25,48 30,44 36,44 L52,44 C58,44 62,48 62,54 L62,68 L25,68 Z" stroke-width="1.2"/>
+      <path d="M15,85 L15,92 M125,85 L125,92"/>
+      <path class="sprankel" d="M112,12 A9,9 0 1 0 122,24 A11,11 0 0 1 112,12 Z" stroke-width="1.2"/>
+    </svg>
+    <div class="max-w-6xl mx-auto">
+      <p class="kicker mb-4">Slapen</p>
+      <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">Waar je slaapt</h2>
+      <p class="text-lg leading-[1.7] text-inktbruin/75 max-w-2xl mb-12">
+        Vier slaapkamers met vijf bedden, ruimte voor acht gasten. Alles licht, rustig en fris — rieten details, witte lakens en airconditioning waar je die nodig hebt.
+      </p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <figure class="bedkaart">
+          <div class="foto-omlijsting !rounded-none aspect-[4/3]">
+            <img src="brand_assets/foto-villa/slaapkamer-2.jpg" alt="Slaapkamer met kingsizebed en rieten wanddecoratie" loading="lazy">
+          </div>
+          <figcaption>
+            <h3 class="font-display text-2xl tracking-wide mb-1">Slaapkamer 1</h3>
+            <p class="text-sm text-inktbruin/70">1 kingsizebed</p>
+          </figcaption>
+        </figure>
+        <figure class="bedkaart">
+          <div class="foto-omlijsting !rounded-none aspect-[4/3]">
+            <img src="brand_assets/foto-villa/slaapkamer-3.jpg" alt="Slaapkamer met kingsizebed en macramé boven het hoofdeinde" loading="lazy">
+          </div>
+          <figcaption>
+            <h3 class="font-display text-2xl tracking-wide mb-1">Slaapkamer 2</h3>
+            <p class="text-sm text-inktbruin/70">1 kingsizebed</p>
+          </figcaption>
+        </figure>
+        <figure class="bedkaart">
+          <div class="foto-omlijsting !rounded-none aspect-[4/3]">
+            <img src="brand_assets/foto-villa/slaapkamer-4.jpg" alt="Slaapkamer met tweepersoonsbed en uitzicht op de tuin" loading="lazy">
+          </div>
+          <figcaption>
+            <h3 class="font-display text-2xl tracking-wide mb-1">Slaapkamer 3</h3>
+            <p class="text-sm text-inktbruin/70">1 tweepersoonsbed</p>
+          </figcaption>
+        </figure>
+        <figure class="bedkaart">
+          <div class="foto-omlijsting !rounded-none aspect-[4/3]">
+            <img src="brand_assets/foto-villa/slaapkamer-tweepersoonsbedden-1.jpg" alt="Slaapkamer met twee eenpersoonsbedden en open kastenwand" loading="lazy">
+          </div>
+          <figcaption>
+            <h3 class="font-display text-2xl tracking-wide mb-1">Slaapkamer 4</h3>
+            <p class="text-sm text-inktbruin/70">2 eenpersoonsbedden</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TORENKAMER ═══════════ -->
+  <section id="torenkamer" class="kamersectie relative bg-ivoor/60 border-y border-goud/20 px-6 sm:px-10 lg:px-16 py-16 sm:py-20 overflow-hidden">
+    <!-- lijnillustratie: de toren met wenteltrap -->
+    <svg class="hidden sm:block absolute bottom-10 left-8 w-16 h-auto text-goud/40" viewBox="0 0 90 150" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+      <path d="M25,140 L25,40 C25,22 65,22 65,40 L65,140"/>
+      <path d="M20,40 C20,16 70,16 70,40" stroke-width="1.2"/>
+      <path d="M45,8 L45,20 M45,8 L58,12 L45,16"/>
+      <rect x="38" y="48" width="14" height="18" rx="7"/>
+      <path d="M65,140 C55,132 75,124 65,116 C55,108 75,100 65,92" stroke-width="1.2"/>
+    </svg>
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5 relative order-2 lg:order-1">
+        <div class="absolute inset-0 translate-x-3 translate-y-3 border border-goud/50 pointer-events-none" style="border-radius: 999px 999px 1.5rem 1.5rem;" aria-hidden="true"></div>
+        <div class="boogfoto schaduw-diep aspect-[4/5]">
+          <img src="brand_assets/foto-villa/torenkamer-buitenkant.jpg" alt="De ronde toren van de villa met wenteltrap naar de torenkamer" loading="lazy">
+        </div>
+      </div>
+      <div class="lg:col-span-7 order-1 lg:order-2">
+        <p class="kicker mb-4">Slapen · de bijzondere kamer</p>
+        <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">De torenkamer</h2>
+        <p class="text-lg leading-[1.7] text-inktbruin/75 mb-5">
+          Eén van de vier slaapkamers zit in de ronde toren en heeft een eigen ingang: een wenteltrap buitenom. Kinderen vechten erom, volwassenen stiekem ook — het is de kamer waar iedereen het na afloop over heeft.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="feitpil">Eigen buitentrap</span>
+          <span class="feitpil">Rondom uitzicht</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ BADKAMERS ═══════════ -->
+  <section id="badkamers" class="kamersectie relative px-6 sm:px-10 lg:px-16 py-16 sm:py-20 overflow-hidden">
+    <!-- lijnillustratie: douchekop met druppels -->
+    <svg class="hidden sm:block absolute top-12 right-12 w-16 h-auto text-goud/40" viewBox="0 0 90 120" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+      <path d="M20,14 L52,14 C60,14 66,20 66,28 L66,38"/>
+      <path d="M52,38 L80,38 L78,50 L54,50 Z"/>
+      <path d="M58,62 C58,66 55,68 55,71 A3,3 0 0 0 61,71 C61,68 58,66 58,62 Z" stroke-width="1.2"/>
+      <path d="M70,78 C70,82 67,84 67,87 A3,3 0 0 0 73,87 C73,84 70,82 70,78 Z" stroke-width="1.2"/>
+      <path d="M62,96 C62,100 59,102 59,105 A3,3 0 0 0 65,105 C65,102 62,100 62,96 Z" stroke-width="1.2"/>
+    </svg>
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5">
+        <p class="kicker mb-4">Badkamers</p>
+        <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">Fris en goud</h2>
+        <p class="text-lg leading-[1.7] text-inktbruin/75 mb-5">
+          Twee moderne badkamers voor acht gasten — met een inloopdouche met natuursteen en goudkleurige kranen, verlichte spiegels en handdoeken die al voor je klaarliggen.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="feitpil">Inloopdouche</span>
+          <span class="feitpil">Handdoeken aanwezig</span>
+        </div>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+        <div class="foto-omlijsting schaduw-zacht aspect-[4/5]">
+          <img src="brand_assets/foto-villa/badkamer-1.jpg" alt="Badkamer met verlichte spiegel, wastafel en rieten manden" loading="lazy">
+        </div>
+        <div class="foto-omlijsting schaduw-zacht aspect-[4/5]">
+          <img src="brand_assets/foto-villa/badkamer-2.jpg" alt="Inloopdouche met natuursteen en goudkleurige kranen" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sectiescheiding" aria-hidden="true"></div>
+
+  <!-- ═══════════ BUITEN ═══════════ -->
+  <section id="buiten" class="kamersectie relative px-6 sm:px-10 lg:px-16 py-16 sm:py-20 overflow-hidden">
+    <!-- lijnillustratie: parasol -->
+    <svg class="hidden sm:block absolute top-10 left-8 w-20 h-auto text-goud/40" viewBox="0 0 120 130" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+      <path d="M14,52 C20,24 100,24 106,52 C90,44 76,44 60,52 C44,44 30,44 14,52 Z"/>
+      <path d="M60,14 L60,48"/>
+      <path d="M60,52 L60,112"/>
+      <path d="M60,112 C60,120 70,122 74,116" stroke-width="1.2"/>
+      <path d="M8,126 C24,118 40,118 56,126 M64,126 C80,118 96,118 112,126" stroke-width="1.2"/>
+    </svg>
+    <div class="max-w-6xl mx-auto">
+      <p class="kicker mb-4">Buiten</p>
+      <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">De tuin is de grootste kamer</h2>
+      <p class="text-lg leading-[1.7] text-inktbruin/75 max-w-2xl mb-12">
+        Hier speelt het vakantieleven zich af: zwemmen voor het ontbijt, lunchen op de patio, barbecueën in de zomerkeuken en 's avonds naborrelen aan de rand van het verlichte zwembad.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <figure class="bedkaart">
+          <div class="foto-omlijsting !rounded-none aspect-[16/10]">
+            <img src="brand_assets/foto-villa/zwembad.jpg" alt="Verwarmd zoutwaterzwembad met loungezakken aan de rand" loading="lazy">
+          </div>
+          <figcaption>
+            <h3 class="font-display text-2xl tracking-wide mb-1">Het zwembad</h3>
+            <p class="text-sm text-inktbruin/70">Zoutwater, het hele jaar verwarmd, dag en nacht open.</p>
+          </figcaption>
+        </figure>
+        <figure class="bedkaart">
+          <div class="foto-omlijsting !rounded-none aspect-[16/10]">
+            <img src="brand_assets/foto-villa/terras.jpg" alt="Overdekte patio met grote houten eettafel en uitzicht op het zwembad" loading="lazy">
+          </div>
+          <figcaption>
+            <h3 class="font-display text-2xl tracking-wide mb-1">De patio</h3>
+            <p class="text-sm text-inktbruin/70">Overdekt eten met uitzicht op het zwembad — zon of schaduw, jij kiest.</p>
+          </figcaption>
+        </figure>
+        <figure class="bedkaart">
+          <div class="foto-omlijsting !rounded-none aspect-[16/10]">
+            <img src="brand_assets/foto-villa/buitenkeuken-barbecue.jpg" alt="Zomerkeuken met ingebouwde barbecue en spoelbak onder de pergola" loading="lazy">
+          </div>
+          <figcaption>
+            <h3 class="font-display text-2xl tracking-wide mb-1">De zomerkeuken</h3>
+            <p class="text-sm text-inktbruin/70">Ingebouwde barbecue en spoelbak — koken zonder binnen te komen.</p>
+          </figcaption>
+        </figure>
+        <figure class="bedkaart">
+          <div class="foto-omlijsting !rounded-none aspect-[16/10]">
+            <img src="brand_assets/foto-villa/tuinpad.jpg" alt="Zonnige kiezeltuin met palmen, cactussen en zitjes" loading="lazy">
+          </div>
+          <figcaption>
+            <h3 class="font-display text-2xl tracking-wide mb-1">De tuin</h3>
+            <p class="text-sm text-inktbruin/70">Palmen, cactussen en stille zithoekjes — plus gratis parkeren op eigen terrein.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA ═══════════ -->
+  <section class="relative px-6 sm:px-10 lg:px-16 pt-20 sm:pt-24 pb-24 sm:pb-28 text-center overflow-hidden">
+    <!-- cocktail in de hoek, zelfde als homepage -->
+    <svg class="hidden sm:block absolute bottom-10 right-10 w-16 h-auto text-goud/50" viewBox="0 0 100 130" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+      <path d="M15,15 L85,15 L50,58 Z"/>
+      <path d="M50,58 L50,100"/>
+      <path d="M28,112 L72,112"/>
+      <path d="M50,100 L50,112"/>
+      <path d="M30,10 C34,2 42,2 44,10" stroke-width="1.2"/>
+      <circle cx="42" cy="9" r="2.4" fill="currentColor" stroke="none"/>
+    </svg>
+    <div class="relative max-w-2xl mx-auto">
+      <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-5">Zie jij jezelf hier al zitten?</h2>
+      <p class="text-lg leading-[1.7] text-inktbruin/75 mb-9">
+        Bekijk wanneer Villa Las Palmeras vrij is en plan je verblijf — het zwembad is toch al warm.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="boeken.html" class="knop-primair">Bekijk beschikbaarheid</a>
+        <a href="omgeving.html" class="knop-secundair">Ontdek de omgeving</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="bg-koffie text-ivoor/80">
+    <div class="px-6 sm:px-10 lg:px-16 pt-16 pb-14">
+      <div class="max-w-6xl mx-auto grid sm:grid-cols-3 gap-10 text-sm">
+        <div>
+          <p class="font-display text-2xl tracking-wide text-ivoor mb-3">Huren in Moraira</p>
+          <p class="leading-[1.7]">Villa Las Palmeras, Moraira<br>Costa Blanca, Spanje</p>
+        </div>
+        <div>
+          <p class="font-semibold text-ivoor mb-3">Ontdek</p>
+          <ul class="space-y-2">
+            <li><a href="het-huis.html" class="voetlink">Villa Las Palmeras</a></li>
+            <li><a href="omgeving.html" class="voetlink">Omgeving</a></li>
+            <li><a href="recensies.html" class="voetlink">Recensies</a></li>
+            <li><a href="blog/index.html" class="voetlink">Blog</a></li>
+            <li><a href="boeken.html" class="voetlink">Boeken</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-ivoor mb-3">Officieel geregistreerd</p>
+          <p class="leading-[1.7]">Toeristisch registratienummer<br>VT-482776-A (Comunidad Valenciana)</p>
+        </div>
+      </div>
+      <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-ivoor/15 flex items-center justify-between text-xs text-ivoor/50">
+        <span>© 2026 Huren in Moraira</span>
+        <span class="kicker !text-goud/70 !text-[0.65rem]">Villa Las Palmeras</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

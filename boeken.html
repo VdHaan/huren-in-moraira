@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beschikbaarheid en boeken — Villa Las Palmeras | Huren in Moraira</title>
+  <meta name="description" content="Bekijk de beschikbaarheid van Villa Las Palmeras in Moraira, kies je aankomst- en vertrekdatum en vraag je verblijf aan. Boeken kan ook direct via Airbnb.">
+  <meta name="robots" content="noindex">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme:      '#F2E9D8',
+            ivoor:      '#FBF6EA',
+            inktbruin:  '#4A3624',
+            koffie:     '#38291A',
+            goud:       '#9C7A46',
+            gouddonker: '#6E4F29',
+            salie:      '#8B9A73',
+          },
+          fontFamily: {
+            display: ['Italiana', 'serif'],
+            body: ['Figtree', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    body { @apply bg-creme text-inktbruin font-body antialiased overflow-x-hidden; }
+
+    .kicker { @apply font-body font-semibold text-goud text-xs sm:text-sm tracking-[0.28em] uppercase; }
+
+    .grain { position: relative; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .04; mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .schaduw-zacht { box-shadow: 0 1px 2px rgba(74,54,36,.06), 0 8px 24px rgba(74,54,36,.10); }
+    .schaduw-diep  { box-shadow: 0 2px 4px rgba(74,54,36,.08), 0 18px 48px rgba(74,54,36,.16); }
+
+    .knop-primair {
+      @apply inline-block bg-gouddonker text-ivoor px-8 py-3.5 rounded-full font-semibold tracking-wide;
+      box-shadow: 0 2px 6px rgba(110,79,41,.30), 0 10px 26px rgba(110,79,41,.22);
+      transition: transform .3s cubic-bezier(.34,1.8,.5,1), background-color .2s ease;
+    }
+    .knop-primair:hover { @apply bg-inktbruin; transform: translateY(-3px) rotate(-1deg) scale(1.02); }
+    .knop-primair:active { transform: translateY(0) scale(.99); }
+    .knop-primair:focus-visible { outline: 3px solid #9C7A46; outline-offset: 3px; }
+
+    .knop-secundair {
+      @apply inline-block bg-ivoor/70 border border-goud/50 text-inktbruin px-8 py-3.5 rounded-full font-semibold tracking-wide;
+      transition: transform .3s cubic-bezier(.34,1.8,.5,1), border-color .2s ease, background-color .2s ease;
+    }
+    .knop-secundair:hover { @apply border-goud bg-ivoor; transform: translateY(-3px) rotate(1deg) scale(1.02); }
+    .knop-secundair:active { transform: translateY(0) scale(.99); }
+    .knop-secundair:focus-visible { outline: 3px solid #9C7A46; outline-offset: 3px; }
+
+    .navlink { @apply text-inktbruin/70 font-medium; transition: color .2s ease; }
+    .navlink:hover { @apply text-goud; }
+    .navlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 4px; border-radius: 4px; }
+    .navlink[aria-current="page"] { @apply text-gouddonker font-semibold; }
+
+    .voetlink { @apply text-ivoor/70; transition: color .2s ease; }
+    .voetlink:hover { @apply text-ivoor; }
+    .voetlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 3px; border-radius: 4px; }
+
+    .tekstlink { @apply text-gouddonker font-semibold underline decoration-2 decoration-goud/50 underline-offset-4; transition: color .2s ease; }
+    .tekstlink:hover { @apply text-inktbruin decoration-goud; }
+    .tekstlink:focus-visible { outline: 2px solid #9C7A46; outline-offset: 3px; border-radius: 4px; }
+
+    .feitpil {
+      @apply inline-flex items-center gap-2 bg-ivoor border border-goud/40 rounded-full px-4 py-2 text-sm font-medium text-inktbruin/80;
+      box-shadow: 0 2px 8px rgba(74,54,36,.06);
+    }
+    .feitpil::before { content: ''; @apply w-1.5 h-1.5 rotate-45 bg-goud shrink-0; }
+
+    .sectiescheiding { @apply relative max-w-5xl mx-auto h-px bg-goud/30; }
+    .sectiescheiding::after {
+      content: ''; @apply absolute left-1/2 top-1/2 w-2.5 h-2.5 bg-creme border border-goud/60;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .foto-omlijsting { @apply relative overflow-hidden rounded-2xl bg-ivoor; }
+    .foto-omlijsting::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(180deg, rgba(74,54,36,0) 68%, rgba(56,41,26,.18) 100%);
+    }
+    .foto-omlijsting img { @apply w-full h-full object-cover; }
+
+    /* Voorproef-melding: dit blok mag pas weg als de echte koppeling er is */
+    .voorproef {
+      @apply flex items-start gap-4 bg-ivoor border border-salie/60 rounded-2xl px-5 sm:px-6 py-4 text-sm sm:text-base leading-[1.65] text-inktbruin/80;
+      box-shadow: 0 2px 8px rgba(74,54,36,.06);
+    }
+    .voorproef svg { @apply w-5 h-5 mt-0.5 shrink-0 text-salie; }
+
+    /* ── Agenda ── */
+    .maandtitel { @apply font-display text-2xl tracking-wide text-center; }
+    .weekdag { @apply text-center text-xs font-semibold text-inktbruin/50 py-2; }
+    .dag {
+      @apply relative w-full aspect-square flex items-center justify-center text-sm font-medium rounded-full;
+      transition: background-color .15s ease, color .15s ease, transform .2s cubic-bezier(.34,1.8,.5,1);
+    }
+    button.dag:hover { @apply bg-goud/20; transform: scale(1.08); }
+    button.dag:active { transform: scale(.96); }
+    button.dag:focus-visible { outline: 2px solid #9C7A46; outline-offset: 1px; }
+    .dag[disabled] { @apply text-inktbruin/25; }
+    .dag.gekozen { @apply bg-gouddonker text-ivoor font-semibold; }
+    .dag.tussen { @apply bg-goud/25 rounded-none; }
+    .maandknop {
+      @apply w-10 h-10 rounded-full border border-goud/50 flex items-center justify-center text-gouddonker bg-ivoor/70;
+      transition: transform .2s cubic-bezier(.34,1.8,.5,1), background-color .15s ease;
+    }
+    .maandknop:hover:not([disabled]) { @apply bg-ivoor; transform: scale(1.08); }
+    .maandknop:active:not([disabled]) { transform: scale(.95); }
+    .maandknop:focus-visible { outline: 2px solid #9C7A46; outline-offset: 2px; }
+    .maandknop[disabled] { @apply opacity-35; }
+
+    /* ── Formulier ── */
+    .veldlabel { @apply block text-sm font-semibold text-inktbruin mb-1.5; }
+    .veld {
+      @apply w-full bg-ivoor border border-goud/40 rounded-xl px-4 py-3 text-inktbruin placeholder:text-inktbruin/40;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    .veld:hover { @apply border-goud/70; }
+    .veld:focus { @apply border-goud outline-none; box-shadow: 0 0 0 3px rgba(156,122,70,.18); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav class="sticky top-0 z-40 bg-creme/90 backdrop-blur-md border-b border-goud/20">
+    <div class="flex items-center justify-between px-6 sm:px-10 lg:px-16 py-4">
+      <a href="index.html" class="navlink font-display text-xl sm:text-2xl tracking-wide !text-inktbruin">Huren in Moraira</a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="het-huis.html" class="navlink">Villa Las Palmeras</a>
+        <a href="omgeving.html" class="navlink">Omgeving</a>
+        <a href="recensies.html" class="navlink">Recensies</a>
+        <a href="blog/index.html" class="navlink">Blog</a>
+        <a href="boeken.html" class="knop-primair !px-5 !py-2.5 text-sm" aria-current="page">Boek je verblijf</a>
+      </div>
+      <a href="boeken.html" class="md:hidden knop-primair !px-4 !py-2 text-sm" aria-current="page">Boeken</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════ PAGINAKOP ═══════════ -->
+  <header class="grain relative overflow-hidden">
+    <!-- lijnillustratie: koffer met zonnetje -->
+    <svg class="hidden sm:block absolute top-14 right-10 lg:right-24 w-28 h-auto text-goud/40 rotate-3" viewBox="0 0 160 130" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+      <rect x="20" y="45" width="100" height="65" rx="10"/>
+      <path d="M55,45 L55,32 C55,27 59,24 64,24 L76,24 C81,24 85,27 85,32 L85,45"/>
+      <path d="M45,45 L45,110 M95,45 L95,110" stroke-width="1.2"/>
+      <circle cx="138" cy="26" r="11"/>
+      <path d="M138,8 L138,3 M138,44 L138,49 M120,26 L115,26 M156,26 L161,26 M125,13 L121,9 M151,39 L155,43 M151,13 L155,9 M125,39 L121,43" stroke-width="1.2"/>
+    </svg>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pt-14 sm:pt-20 pb-10 sm:pb-12">
+      <p class="kicker mb-6">Villa Las Palmeras · Boeken</p>
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-wide mb-7">Plan je verblijf</h1>
+      <p class="text-lg sm:text-xl leading-relaxed text-inktbruin/75 max-w-2xl mb-8">
+        Kies in de agenda je aankomst- en vertrekdatum en stuur je aanvraag. We reageren snel — meestal dezelfde dag nog.
+      </p>
+      <!-- LET OP: voorproef-melding — laten staan tot de echte agenda- en boekingskoppeling er is -->
+      <div class="voorproef max-w-2xl" role="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.01"/></svg>
+        <p>
+          <strong class="font-semibold">Deze pagina is een voorproef.</strong> De agenda toont nog geen echte bezetting en het formulier verstuurt nog niets — de koppeling met het boekingssysteem volgt. Boeken kan nu al via
+          <a href="https://www.airbnb.nl/rooms/1414348870844252524" class="tekstlink" rel="noopener">de Airbnb-pagina van de villa</a>.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <div class="sectiescheiding" aria-hidden="true"></div>
+
+  <!-- ═══════════ AGENDA + FORMULIER ═══════════ -->
+  <section class="px-6 sm:px-10 lg:px-16 py-14 sm:py-20">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+      <!-- Agenda -->
+      <div class="lg:col-span-7">
+        <h2 class="font-display text-3xl sm:text-4xl tracking-wide mb-6">Beschikbaarheid</h2>
+        <div class="bg-ivoor border border-goud/25 rounded-3xl schaduw-zacht p-6 sm:p-8">
+          <div class="flex items-center justify-between mb-6">
+            <button type="button" id="vorigeMaand" class="maandknop" aria-label="Vorige maand">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <p class="text-sm text-inktbruin/60" id="agendaHulp">Kies eerst je aankomstdag, dan je vertrekdag</p>
+            <button type="button" id="volgendeMaand" class="maandknop" aria-label="Volgende maand">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-8" id="agenda"></div>
+          <p class="mt-6 pt-5 border-t border-goud/20 text-sm text-inktbruin/60" id="keuzeSamenvatting">Nog geen data gekozen.</p>
+        </div>
+      </div>
+
+      <!-- Formulier -->
+      <div class="lg:col-span-5">
+        <h2 class="font-display text-3xl sm:text-4xl tracking-wide mb-6">Je aanvraag</h2>
+        <form id="aanvraag" class="bg-ivoor border border-goud/25 rounded-3xl schaduw-diep p-6 sm:p-8 space-y-5" novalidate>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="veldlabel" for="aankomst">Aankomst</label>
+              <input class="veld" id="aankomst" name="aankomst" type="text" placeholder="Kies in de agenda" readonly>
+            </div>
+            <div>
+              <label class="veldlabel" for="vertrek">Vertrek</label>
+              <input class="veld" id="vertrek" name="vertrek" type="text" placeholder="Kies in de agenda" readonly>
+            </div>
+          </div>
+          <div>
+            <label class="veldlabel" for="gasten">Aantal gasten</label>
+            <select class="veld" id="gasten" name="gasten">
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+            </select>
+          </div>
+          <div>
+            <label class="veldlabel" for="naam">Naam</label>
+            <input class="veld" id="naam" name="naam" type="text" autocomplete="name" placeholder="Voor- en achternaam">
+          </div>
+          <div>
+            <label class="veldlabel" for="email">E-mailadres</label>
+            <input class="veld" id="email" name="email" type="email" autocomplete="email" placeholder="jij@voorbeeld.nl">
+          </div>
+          <div>
+            <label class="veldlabel" for="bericht">Bericht <span class="font-normal text-inktbruin/50">(niet verplicht)</span></label>
+            <textarea class="veld" id="bericht" name="bericht" rows="3" placeholder="Vragen of wensen? Laat het weten."></textarea>
+          </div>
+          <button type="submit" class="knop-primair w-full text-center">Verstuur aanvraag</button>
+          <p id="verzendmelding" class="hidden text-sm leading-[1.65] bg-creme border border-salie/60 rounded-xl px-4 py-3 text-inktbruin/80" role="status">
+            Het formulier is nog niet gekoppeld, dus je aanvraag is <strong class="font-semibold">niet verstuurd</strong>. Boek voorlopig via <a href="https://www.airbnb.nl/rooms/1414348870844252524" class="tekstlink" rel="noopener">Airbnb</a> — daar zie je ook de actuele beschikbaarheid.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="sectiescheiding" aria-hidden="true"></div>
+
+  <!-- ═══════════ GOED OM TE WETEN ═══════════ -->
+  <section class="px-6 sm:px-10 lg:px-16 py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5">
+        <div class="foto-omlijsting schaduw-zacht aspect-[4/5]">
+          <img src="brand_assets/foto-villa/buitenkant.jpg" alt="De entree van Villa Las Palmeras met smeedijzeren poort en natuurstenen trap" loading="lazy">
+        </div>
+      </div>
+      <div class="lg:col-span-7">
+        <h2 class="font-display text-4xl sm:text-5xl tracking-wide mb-6">Goed om te weten</h2>
+        <ul class="space-y-4 text-lg leading-[1.7] text-inktbruin/75">
+          <li class="flex gap-3"><span class="w-1.5 h-1.5 rotate-45 bg-goud shrink-0 mt-3" aria-hidden="true"></span>
+            De villa is officieel geregistreerd als vakantieverhuur: VT&#8209;482776&#8209;A (Comunidad Valenciana).</li>
+          <li class="flex gap-3"><span class="w-1.5 h-1.5 rotate-45 bg-goud shrink-0 mt-3" aria-hidden="true"></span>
+            Voor je verblijf tekenen we een verhuurcontract — dat is in Spanje wettelijk verplicht. Daarvoor hebben we je ID, telefoonnummer en adres nodig.</li>
+          <li class="flex gap-3"><span class="w-1.5 h-1.5 rotate-45 bg-goud shrink-0 mt-3" aria-hidden="true"></span>
+            Parkeren is gratis, op eigen terrein achter de poort.</li>
+          <li class="flex gap-3"><span class="w-1.5 h-1.5 rotate-45 bg-goud shrink-0 mt-3" aria-hidden="true"></span>
+            Vragen vooraf? De host is een Superhost met negen jaar ervaring en reageert snel.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="bg-koffie text-ivoor/80">
+    <div class="px-6 sm:px-10 lg:px-16 pt-16 pb-14">
+      <div class="max-w-6xl mx-auto grid sm:grid-cols-3 gap-10 text-sm">
+        <div>
+          <p class="font-display text-2xl tracking-wide text-ivoor mb-3">Huren in Moraira</p>
+          <p class="leading-[1.7]">Villa Las Palmeras, Moraira<br>Costa Blanca, Spanje</p>
+        </div>
+        <div>
+          <p class="font-semibold text-ivoor mb-3">Ontdek</p>
+          <ul class="space-y-2">
+            <li><a href="het-huis.html" class="voetlink">Villa Las Palmeras</a></li>
+            <li><a href="omgeving.html" class="voetlink">Omgeving</a></li>
+            <li><a href="recensies.html" class="voetlink">Recensies</a></li>
+            <li><a href="blog/index.html" class="voetlink">Blog</a></li>
+            <li><a href="boeken.html" class="voetlink">Boeken</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-ivoor mb-3">Officieel geregistreerd</p>
+          <p class="leading-[1.7]">Toeristisch registratienummer<br>VT-482776-A (Comunidad Valenciana)</p>
+        </div>
+      </div>
+      <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-ivoor/15 flex items-center justify-between text-xs text-ivoor/50">
+        <span>© 2026 Huren in Moraira</span>
+        <span class="kicker !text-goud/70 !text-[0.65rem]">Villa Las Palmeras</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Agenda: twee maanden, klik aankomst → vertrek ──
+    // LET OP: toont nog geen echte bezetting; koppeling met het boekingssysteem volgt.
+    (function () {
+      const agendaEl = document.getElementById('agenda');
+      const vorigeKnop = document.getElementById('vorigeMaand');
+      const volgendeKnop = document.getElementById('volgendeMaand');
+      const samenvattingEl = document.getElementById('keuzeSamenvatting');
+      const aankomstVeld = document.getElementById('aankomst');
+      const vertrekVeld = document.getElementById('vertrek');
+
+      const maandNamen = ['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
+      const weekdagen = ['ma','di','wo','do','vr','za','zo'];
+
+      const vandaag = new Date();
+      vandaag.setHours(0, 0, 0, 0);
+      let eersteMaand = new Date(vandaag.getFullYear(), vandaag.getMonth(), 1);
+      let aankomst = null;
+      let vertrek = null;
+
+      function datumTekst(d) {
+        return d.getDate() + ' ' + maandNamen[d.getMonth()] + ' ' + d.getFullYear();
+      }
+
+      function maakMaand(jaar, maand) {
+        const blok = document.createElement('div');
+        const titel = document.createElement('p');
+        titel.className = 'maandtitel mb-4';
+        titel.textContent = maandNamen[maand] + ' ' + jaar;
+        blok.appendChild(titel);
+
+        const raster = document.createElement('div');
+        raster.className = 'grid grid-cols-7 gap-y-1';
+        weekdagen.forEach(w => {
+          const cel = document.createElement('span');
+          cel.className = 'weekdag';
+          cel.textContent = w;
+          raster.appendChild(cel);
+        });
+
+        const eerste = new Date(jaar, maand, 1);
+        const start = (eerste.getDay() + 6) % 7; // maandag als eerste kolom
+        for (let i = 0; i < start; i++) raster.appendChild(document.createElement('span'));
+
+        const dagen = new Date(jaar, maand + 1, 0).getDate();
+        for (let d = 1; d <= dagen; d++) {
+          const datum = new Date(jaar, maand, d);
+          const voorbij = datum < vandaag;
+          const el = document.createElement(voorbij ? 'span' : 'button');
+          el.className = 'dag';
+          el.textContent = d;
+          if (voorbij) {
+            el.setAttribute('disabled', '');
+          } else {
+            el.type = 'button';
+            el.setAttribute('aria-label', datumTekst(datum));
+            if (aankomst && datum.getTime() === aankomst.getTime()) el.classList.add('gekozen');
+            if (vertrek && datum.getTime() === vertrek.getTime()) el.classList.add('gekozen');
+            if (aankomst && vertrek && datum > aankomst && datum < vertrek) el.classList.add('tussen');
+            el.addEventListener('click', () => kies(datum));
+          }
+          raster.appendChild(el);
+        }
+        blok.appendChild(raster);
+        return blok;
+      }
+
+      function kies(datum) {
+        if (!aankomst || (aankomst && vertrek)) {
+          aankomst = datum; vertrek = null;
+        } else if (datum > aankomst) {
+          vertrek = datum;
+        } else {
+          aankomst = datum;
+        }
+        teken();
+      }
+
+      function teken() {
+        agendaEl.innerHTML = '';
+        const m2 = new Date(eersteMaand.getFullYear(), eersteMaand.getMonth() + 1, 1);
+        agendaEl.appendChild(maakMaand(eersteMaand.getFullYear(), eersteMaand.getMonth()));
+        agendaEl.appendChild(maakMaand(m2.getFullYear(), m2.getMonth()));
+
+        const huidigeMaand = new Date(vandaag.getFullYear(), vandaag.getMonth(), 1);
+        if (eersteMaand <= huidigeMaand) vorigeKnop.setAttribute('disabled', '');
+        else vorigeKnop.removeAttribute('disabled');
+
+        aankomstVeld.value = aankomst ? datumTekst(aankomst) : '';
+        vertrekVeld.value = vertrek ? datumTekst(vertrek) : '';
+        if (aankomst && vertrek) {
+          const nachten = Math.round((vertrek - aankomst) / 86400000);
+          samenvattingEl.textContent = datumTekst(aankomst) + ' tot ' + datumTekst(vertrek) + ' — ' + nachten + (nachten === 1 ? ' nacht' : ' nachten') + '.';
+        } else if (aankomst) {
+          samenvattingEl.textContent = 'Aankomst ' + datumTekst(aankomst) + ' — kies nu je vertrekdag.';
+        } else {
+          samenvattingEl.textContent = 'Nog geen data gekozen.';
+        }
+      }
+
+      vorigeKnop.addEventListener('click', () => {
+        eersteMaand = new Date(eersteMaand.getFullYear(), eersteMaand.getMonth() - 1, 1);
+        teken();
+      });
+      volgendeKnop.addEventListener('click', () => {
+        eersteMaand = new Date(eersteMaand.getFullYear(), eersteMaand.getMonth() + 1, 1);
+        teken();
+      });
+
+      teken();
+
+      // Formulier: nog niet gekoppeld — toon de melding in plaats van te versturen.
+      document.getElementById('aanvraag').addEventListener('submit', function (e) {
+        e.preventDefault();
+        document.getElementById('verzendmelding').classList.remove('hidden');
+      });
+    })();
+  </script>
+
+</body>
+</html>
