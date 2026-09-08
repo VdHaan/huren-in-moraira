@@ -63,6 +63,19 @@
       content: ''; @apply absolute left-1/2 top-1/2 w-2.5 h-2.5 bg-creme border border-goud/60;
       transform: translate(-50%, -50%) rotate(45deg);
     }
+    .foto-omlijsting { @apply relative overflow-hidden bg-ivoor; }
+    .foto-omlijsting::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(180deg, rgba(74,54,36,0) 68%, rgba(56,41,26,.18) 100%);
+    }
+    .foto-omlijsting img { @apply w-full h-full object-cover; }
+    .fotocredit {
+      @apply absolute bottom-3 right-3 z-10 rounded-full bg-koffie/50 px-3 py-1 text-[0.65rem] font-medium text-ivoor/90;
+      transition: background-color .2s ease;
+    }
+    .fotocredit:hover { @apply bg-koffie/75; }
+    .fotocredit:active { @apply bg-koffie/85; }
+    .fotocredit:focus-visible { outline: 2px solid #FBF6EA; outline-offset: 2px; }
     .foto-plek {
       @apply w-full h-full flex items-center justify-center;
       background:
@@ -109,7 +122,8 @@
         <div class="relative">
           <div class="absolute inset-0 translate-x-2.5 translate-y-2.5 rounded-3xl border border-goud/50 pointer-events-none" aria-hidden="true"></div>
           <div class="relative overflow-hidden rounded-3xl schaduw-diep h-56 sm:h-72">
-            <div class="foto-plek" role="img" aria-label="De kiezelbaai Cala la Granadella tussen dennenbossen"><span>Foto volgt</span></div>
+            <div class="foto-omlijsting w-full h-full"><img src="../brand_assets/foto-omgeving/cala-granadella-javea.jpg" alt="Het turquoise water van Cala la Granadella tussen de kliffen" width="1400" height="933" fetchpriority="high"></div>
+            <a class="fotocredit" href="https://commons.wikimedia.org/wiki/File:Cala_de_la_Granadella,_J%C3%A1vea,_Espa%C3%B1a,_2014-07-01,_DD_15.JPG" target="_blank" rel="noopener">Foto: Diego Delso · CC BY-SA 4.0</a>
           </div>
         </div>
       </div>
