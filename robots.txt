@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vdhaan.github.io/huren-in-moraira/sitemap.xml

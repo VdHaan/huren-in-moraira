@@ -1,3 +1,19 @@
 node_modules/
 temporary screenshots/
 .DS_Store
+
+# Toont het huisnummer en de alarmstickers: hoort niet in een publieke repo
+brand_assets/foto-villa/buitenkant.jpg
+
+# Werkbestanden en ruwe brondata: blijven lokaal staan, worden niet gepubliceerd
+CLAUDE.md
+inspiratie.md
+scrape-*.mjs
+download-*.mjs
+clip-palm-tmp.mjs
+brand_assets/*.json
+!brand_assets/foto-omgeving/credits.json
+!brand_assets/foto-omgeving/maten.json
+
+# Geparkeerde agenda-voorproef: bewaard op schijf, niet gepubliceerd
+boeken-agenda-voorproef.html

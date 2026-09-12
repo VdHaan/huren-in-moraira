@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Het oude centrum van Xàbia | Blog Huren in Moraira</title>
   <meta name="description" content="Twee kilometer van het strand ligt het historische hart van Jávea: een vestingkerk, gevels van tosca-steen en een overdekte markt.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://vdhaan.github.io/huren-in-moraira/blog/oude-centrum-javea.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Huren in Moraira">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:url" content="https://vdhaan.github.io/huren-in-moraira/blog/oude-centrum-javea.html">
+  <meta property="og:title" content="Het oude centrum van Xàbia | Blog Huren in Moraira">
+  <meta property="og:description" content="Twee kilometer van het strand ligt het historische hart van Jávea: een vestingkerk, gevels van tosca-steen en een overdekte markt.">
+  <meta property="og:image" content="https://vdhaan.github.io/huren-in-moraira/brand_assets/foto-omgeving/oude-centrum-javea.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,13 +114,13 @@
       content: ''; @apply absolute left-1/2 top-1/2 w-2.5 h-2.5 bg-creme border border-goud/60;
       transform: translate(-50%, -50%) rotate(45deg);
     }
-    .foto-plek {
-      @apply w-full h-full flex items-center justify-center;
-      background:
-        radial-gradient(ellipse 70% 55% at 70% 20%, rgba(156,122,70,.18) 0%, rgba(156,122,70,0) 60%),
-        linear-gradient(165deg, #EFE3CC 0%, #E9DCC2 55%, #E2D2B2 100%);
+    .fotocredit {
+      @apply absolute bottom-3 right-3 z-10 rounded-full bg-koffie/50 px-3 py-1 text-[0.65rem] font-medium text-ivoor/90;
+      transition: background-color .2s ease;
     }
-    .foto-plek span { @apply text-sm font-semibold text-gouddonker/80 bg-ivoor/80 rounded-full px-3 py-1; }
+    .fotocredit:hover { @apply bg-koffie/75; }
+    .fotocredit:active { @apply bg-koffie/85; }
+    .fotocredit:focus-visible { outline: 2px solid #FBF6EA; outline-offset: 2px; }
     .artikel h2 { @apply font-display text-3xl sm:text-4xl tracking-wide mt-12 mb-4; }
     .artikel p { @apply text-lg leading-[1.75] text-inktbruin/75 mb-5; }
     .blogkaart {
@@ -183,7 +193,8 @@
         <div class="relative">
           <div class="absolute inset-0 translate-x-2.5 translate-y-2.5 rounded-3xl border border-goud/50 pointer-events-none" aria-hidden="true"></div>
           <div class="relative overflow-hidden rounded-3xl schaduw-diep h-56 sm:h-72">
-            <div class="foto-plek" role="img" aria-label="Smal straatje met tosca-stenen gevels in het oude centrum van Xàbia"><span>Foto volgt</span></div>
+            <div class="foto-omlijsting w-full h-full"><img src="../brand_assets/foto-omgeving/oude-centrum-javea.jpg" alt="De vestingkerk van Sant Bartomeu in goudkleurige tosca-steen, met palmen, in het oude centrum van Xàbia" width="1400" height="1062" fetchpriority="high"></div>
+            <a class="fotocredit" href="https://commons.wikimedia.org/wiki/File:X%C3%A0bia,_esgl%C3%A9sia_de_Sant_Bartomeu.JPG" target="_blank" rel="noopener">Foto: Joanbanjo · CC BY-SA 3.0</a>
           </div>
         </div>
       </div>
@@ -220,7 +231,7 @@
         Villa Las Palmeras is het ideale vertrekpunt: 4 slaapkamers, 8 gasten en een zwembad dat het hele jaar warm is.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="../boeken.html" class="knop-primair">Bekijk beschikbaarheid</a>
+        <a href="../boeken.html" class="knop-primair">Vraag beschikbaarheid aan</a>
       </div>
     </div>
   </section>
